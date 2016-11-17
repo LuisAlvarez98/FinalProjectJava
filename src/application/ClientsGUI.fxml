@@ -27,6 +27,6 @@
       <Button fx:id="refreshButton" layoutX="496.0" layoutY="463.0" mnemonicParsing="false" onAction="#refreshButtonPressed" stylesheets="@application.css" text="Refresh" />
       <Button fx:id="addButton" layoutX="37.0" layoutY="454.0" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="53.0" prefWidth="81.0" stylesheets="@application.css" text="Add" />
       <Button fx:id="deleteButton" layoutX="131.0" layoutY="454.0" mnemonicParsing="false" onAction="#deleteButtonPressed" stylesheets="@application.css" text="Delete" />
-      <Button fx:id="refreshButton21" layoutX="243.0" layoutY="454.0" mnemonicParsing="false" onAction="#refreshButtonPressed" prefHeight="53.0" prefWidth="94.0" stylesheets="@application.css" text="Edit" />
+      <Button fx:id="refreshButton21" layoutX="243.0" layoutY="454.0" mnemonicParsing="false" onAction="#editButtonPressed" prefHeight="53.0" prefWidth="94.0" stylesheets="@application.css" text="Edit" />
    </children>
 </AnchorPane>

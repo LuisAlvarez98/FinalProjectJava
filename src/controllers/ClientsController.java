@@ -24,14 +24,19 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class ClientsController implements Initializable {
-	@FXML private Button addButton,deleteButton,editButton,backButton,logoutButton,refreshButton;
+	@FXML private Button addButton;
+	@FXML private Button deleteButton;
+	@FXML private Button editButton;
+	@FXML private Button backButton;
+	@FXML private Button logoutButton;
 
-
+	@FXML private Button refreshButton;
 	@FXML private TableView<Tables> dataTable;
-	@FXML private TableColumn<Tables, String> firstNameCol,lastNameCol,numberCol;
-
-	public Stage stage1,stage2 = new Stage();
-
+	@FXML private TableColumn<Tables, String> firstNameCol;
+	@FXML private TableColumn<Tables, String> lastNameCol;
+	@FXML private TableColumn<Tables, String> numberCol;
+	public Stage stage1 = new Stage();
+	public Stage stage2 = new Stage();
 		private ObservableList<Tables> data = FXCollections.observableArrayList();
 		ArrayList<String> clients =  new ArrayList<String>();
 
@@ -98,7 +103,15 @@ public class ClientsController implements Initializable {
 		Scene scene9 = new Scene(root2);
 		stage1.setScene(scene9);
 		stage1.show();
-		System.out.println("Holas");
+
+	}
+	@FXML
+	public void editButtonPressed(ActionEvent e) throws IOException{
+		Parent root3= FXMLLoader.load(getClass().getResource("/application/EditGUI.fxml"));
+		Scene scene5 = new Scene(root3);
+		stage1.setScene(scene5);
+		stage1.show();
+
 	}
 
 

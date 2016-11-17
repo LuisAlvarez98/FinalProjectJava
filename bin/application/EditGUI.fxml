@@ -5,16 +5,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="102.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditController">
+<AnchorPane prefHeight="302.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditController">
    <children>
       <Label layoutX="151.0" layoutY="14.0" text="Edit Clients" />
-      <Button fx:id="cancelButton" layoutX="233.0" layoutY="83.0" mnemonicParsing="false" onAction="#cancelButtonPressed" text="Cancel" />
-      <Button fx:id="submitButton" layoutX="42.0" layoutY="84.0" mnemonicParsing="false" onAction="#submitButtonPressed" text="Submit" />
-      <TextField fx:id="phoneField" layoutX="236.0" layoutY="49.0" prefHeight="25.0" prefWidth="89.0" />
-      <TextField fx:id="emailField" layoutX="130.0" layoutY="49.0" prefHeight="25.0" prefWidth="89.0" />
-      <TextField fx:id="nameField" layoutX="24.0" layoutY="49.0" prefHeight="25.0" prefWidth="89.0" />
-      <Label layoutX="236.0" layoutY="33.0" text="Phone" />
-      <Label layoutX="130.0" layoutY="33.0" text="Email" />
-      <Label layoutX="24.0" layoutY="33.0" text="Name" />
+      <Button fx:id="cancelButton" layoutX="139.0" layoutY="263.0" mnemonicParsing="false" onAction="#cancelButtonPressed" text="Cancel" />
+      <Button fx:id="searchButton" layoutX="43.0" layoutY="132.0" mnemonicParsing="false" onAction="#searchButtonPressed" text="Search" />
+      <TextField fx:id="phoneField" layoutX="215.0" layoutY="223.0" prefHeight="25.0" prefWidth="89.0" />
+      <TextField fx:id="emailField" layoutX="120.0" layoutY="223.0" prefHeight="25.0" prefWidth="89.0" />
+      <TextField fx:id="searchField" layoutX="24.0" layoutY="96.0" prefHeight="25.0" prefWidth="89.0" />
+      <Label layoutX="216.0" layoutY="199.0" text="Phone" />
+      <Label layoutX="120.0" layoutY="199.0" text="Email" />
+      <Label layoutX="53.0" layoutY="75.0" text="Name" />
+      <Button fx:id="submitButton" layoutX="68.0" layoutY="263.0" mnemonicParsing="false" onAction="#submitButtonPressed" text="Submit" />
+      <TextField fx:id="nameField" layoutX="25.0" layoutY="223.0" prefHeight="25.0" prefWidth="89.0" />
+      <Label layoutX="27.0" layoutY="199.0" text="Name" />
    </children>
 </AnchorPane>
