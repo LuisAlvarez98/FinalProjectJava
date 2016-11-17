@@ -38,24 +38,31 @@ public class SellDressController implements Initializable {
 	{
 		application.Main.mainStage.setScene(application.Main.scene1);
 	}
+
 	@FXML
 	public void payButtonPressed(ActionEvent e){
-		DbConnect connect = new DbConnect();
-		Main.inventory= connect.getDataInventory();
-		boolean found = false;
 
-		for(int i = 0; i < Main.inventory.size();i+=3)
-		{
-			if(dressSelector.getValue().equals(Main.inventory.get(i))){
-				total.setText(Main.inventory.get(i+1));
-				found = true;
+		try{
+			DbConnect connect = new DbConnect();
+			Main.inventory= connect.getDataInventory();
+			boolean found = false;
+
+			for(int i = 0; i < Main.inventory.size();i+=3)
+			{
+				if(dressSelector.getValue().equals(Main.inventory.get(i))){
+					total.setText(Main.inventory.get(i+1));
+					found = true;
+				}
+
+				if(!found)
+					total.setText("");
 			}
 
-			if(!found)
-				total.setText("");
+			addSales(dressSelector.getValue(),Integer.parseInt(total.getText()),clientSelector.getValue());
+		}catch(Exception ep){
+
 		}
 
-		addSales(dressSelector.getValue(),Integer.parseInt(total.getText()),clientSelector.getValue());
 
 
 	}
@@ -85,7 +92,6 @@ public class SellDressController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-
 
 		DbConnect connect = new DbConnect();
 		Main.inventory= connect.getDataInventory();
