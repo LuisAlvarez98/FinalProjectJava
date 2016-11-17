@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="337.0" prefWidth="433.0" style="-fx-background-color: #000428;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23292f" height="37.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="433.0" />
+      <Button fx:id="logoutButton" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" onAction="#logoutButtonPressed" prefHeight="21.0" prefWidth="76.0" text="Logout">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button fx:id="inventoryButton" layoutX="43.0" layoutY="65.0" mnemonicParsing="false" onAction="#inventoryButtonPressed" prefHeight="74.0" prefWidth="147.0" stylesheets="@application.css" text="Inventory" textAlignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="clientsButton" layoutX="197.0" layoutY="157.0" mnemonicParsing="false" onAction="#clientsButtonPressed" prefHeight="74.0" prefWidth="147.0" stylesheets="@application.css" text="Clients" textAlignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="sellDressButton" layoutX="42.0" layoutY="157.0" mnemonicParsing="false" onAction="#sellDressButtonPressed" prefHeight="74.0" prefWidth="147.0" stylesheets="@application.css" text="Shop" textAlignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="salesButton" layoutX="197.0" layoutY="65.0" mnemonicParsing="false" onAction="#salesButtonPressed" prefHeight="74.0" prefWidth="147.0" stylesheets="@application.css" text="Sales" textAlignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

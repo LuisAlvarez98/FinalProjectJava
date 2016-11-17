@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="530.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientsController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23292f" height="37.0" stroke="BLACK" strokeType="INSIDE" width="639.0" />
+      <Button fx:id="logoutButton" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#logoutButtonPressed" text="Logout" />
+      <Button fx:id="backButton" layoutX="81.0" layoutY="6.0" mnemonicParsing="false" onAction="#backButtonPressed" text="Back" />
+      <TableView fx:id="dataTable" layoutX="22.0" layoutY="81.0" prefHeight="354.0" prefWidth="609.0">
+        <columns>
+          <TableColumn fx:id="firstNameCol" prefWidth="153.0" text="name" />
+            <TableColumn fx:id="lastNameCol" prefWidth="235.0" text="email" />
+            <TableColumn fx:id="numberCol" prefWidth="220.0" text="phone" />
+        </columns>
+      </TableView>
+      <Label layoutX="290.0" layoutY="3.0" prefHeight="17.0" prefWidth="147.0" text="Clients" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="refreshButton" layoutX="496.0" layoutY="463.0" mnemonicParsing="false" onAction="#refreshButtonPressed" stylesheets="@application.css" text="Refresh" />
+      <Button fx:id="addButton" layoutX="37.0" layoutY="454.0" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="53.0" prefWidth="81.0" stylesheets="@application.css" text="Add" />
+      <Button fx:id="deleteButton" layoutX="131.0" layoutY="454.0" mnemonicParsing="false" onAction="#deleteButtonPressed" stylesheets="@application.css" text="Delete" />
+      <Button fx:id="refreshButton21" layoutX="243.0" layoutY="454.0" mnemonicParsing="false" onAction="#refreshButtonPressed" prefHeight="53.0" prefWidth="94.0" stylesheets="@application.css" text="Edit" />
+   </children>
+</AnchorPane>

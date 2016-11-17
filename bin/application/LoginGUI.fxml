@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="451.0" prefWidth="491.0" style="-fx-background-color: #000428;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+   <children>
+      <Label layoutX="25.0" layoutY="205.0" prefHeight="43.0" prefWidth="87.0" text="User:" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font></Label>
+      <Label layoutX="25.0" layoutY="290.0" prefHeight="43.0" prefWidth="147.0" text="Password:" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font></Label>
+      <TextField fx:id="userField" layoutX="173.0" layoutY="199.0" onAction="#onEnter" prefHeight="56.0" prefWidth="255.0" style="-fx-background-color: #808080;">
+         <font>
+            <Font size="29.0" />
+         </font></TextField>
+      <PasswordField fx:id="passField" layoutX="173.0" layoutY="277.0" onAction="#onEnter" prefHeight="56.0" prefWidth="255.0" style="-fx-background-color: #808080;">
+         <font>
+            <Font size="29.0" />
+         </font></PasswordField>
+      <Button fx:id="submitButton" layoutX="361.0" layoutY="379.0" mnemonicParsing="false" onAction="#submitButtonPressed" stylesheets="@application.css" text="Submit" />
+      <Label fx:id="accessDenied" layoutX="52.0" layoutY="391.0" prefHeight="46.0" prefWidth="255.0" textFill="WHITE">
+         <font>
+            <Font size="31.0" />
+         </font></Label>
+      <CheckBox fx:id="showPassword" layoutX="124.0" layoutY="354.0" mnemonicParsing="false" onAction="#showPasswordPressed" text="Show Password" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="12.0" layoutY="32.0" text="Trends by Luciana Gavino" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni MT Condensed" size="65.0" />
+         </font>
+      </Label>
+      <TextField fx:id="showPassField" layoutX="173.0" layoutY="277.0" onAction="#onEnter" prefHeight="56.0" prefWidth="255.0" style="-fx-background-color: #808080;">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
