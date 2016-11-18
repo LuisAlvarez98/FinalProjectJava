@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 public class EditController implements Initializable {
 
@@ -18,19 +19,31 @@ public class EditController implements Initializable {
 	@FXML private Button cancelButton;
 	@FXML private Button searchButton;
 
+	@FXML private TextField searchField;
+	@FXML
+	private TextField nameField;
+	@FXML
+	private  TextField phoneField;
+	@FXML
+	private  TextField emailField;
+
+
+
 
 	@FXML
 	public void submitButtonPressed(ActionEvent e)
 	{
 
+
 	}
 	@FXML
 	public void cancelButtonPressed(ActionEvent e)
 	{
-
+		System.out.println("cancel work");
 	}
 	@FXML
 	public void searchButtonPressed(ActionEvent e){
+		System.out.println("search working");
 
 	}
 

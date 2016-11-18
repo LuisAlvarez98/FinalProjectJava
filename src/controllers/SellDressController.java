@@ -53,8 +53,8 @@ public class SellDressController implements Initializable {
 					total.setText(Main.inventory.get(i+1));
 					found = true;
 					addSales(dressSelector.getValue(),Integer.parseInt(total.getText()),clientSelector.getValue());
-				}
 
+				}
 				if(!found)
 					total.setText("");
 			}
@@ -87,7 +87,7 @@ public class SellDressController implements Initializable {
 			System.out.print("Error" + e);
 		}
 	}
-//JAJAJ
+
 	@FXML
 	public void cancelButtonPressed(ActionEvent e){
 		application.Main.mainStage.setScene(application.Main.scene2);
