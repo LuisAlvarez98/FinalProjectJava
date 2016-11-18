@@ -38,48 +38,58 @@ public class LoginController implements Initializable {
 	@FXML
 	public void submitButtonPressed(ActionEvent event)
 	{
-
-		DbConnect connect = new DbConnect();
-		users = connect.getDataUser();
-		passwords = connect.getDataPass();
-		if(showPassword.isSelected()){
-			passField.setText(showPassField.getText());
-		}else{
-			showPassField.setText(passField.getText());
-		}
-
-
-		for(int i = 0; i  < users.size();i++){
-			accessDenied.setText("");
-			if(userField.getText().equals(users.get(i)) && passField.getText().equals(passwords.get(i)))
-			{
-
-				application.Main.mainStage = (Stage) submitButton.getScene().getWindow();
-				application.Main.mainStage.setScene(application.Main.scene2);
-				accessDenied.setText("");
-				Main.user = userField.getText();
-
-			}else if(!userField.getText().equals(users.get(i))){
-				accessDenied.setText("Wrong Credentials");
+		try{
+			DbConnect connect = new DbConnect();
+			users = connect.getDataUser();
+			passwords = connect.getDataPass();
+			if(showPassword.isSelected()){
+				passField.setText(showPassField.getText());
 			}else{
-				accessDenied.setText("Wrong Credentials");
+				showPassField.setText(passField.getText());
 			}
+
+
+			for(int i = 0; i  < users.size();i++){
+				accessDenied.setText("");
+				if(userField.getText().equals(users.get(i)) && passField.getText().equals(passwords.get(i)))
+				{
+
+					application.Main.mainStage = (Stage) submitButton.getScene().getWindow();
+					application.Main.mainStage.setScene(application.Main.scene2);
+					accessDenied.setText("");
+					Main.user = userField.getText();
+
+				}else if(!userField.getText().equals(users.get(i))){
+					accessDenied.setText("Wrong Credentials");
+				}else{
+					accessDenied.setText("Wrong Credentials");
+				}
+			}
+
+
+
+		}catch(Exception ep){
+
 		}
-
-
 
 	}
 	@FXML
 	public void showPasswordPressed(ActionEvent e){
-		if(showPassword.isSelected()){
-			passField.setVisible(false);
-			showPassField.setVisible(true);
-			showPassField.setText(passField.getText());
-		}else{
-			passField.setVisible(true);
-			showPassField.setVisible(false);
-			passField.setText(showPassField.getText());
+		try{
+			if(showPassword.isSelected())
+			{
+				passField.setVisible(false);
+				showPassField.setVisible(true);
+				showPassField.setText(passField.getText());
+			}else{
+				passField.setVisible(true);
+				showPassField.setVisible(false);
+				passField.setText(showPassField.getText());
+			}
+		}catch(Exception ep){
+
 		}
+
 	}
 
 }

@@ -44,73 +44,103 @@ public class ClientsController implements Initializable {
 	@FXML
 	public void backButtonPressed(ActionEvent e)
 	{
-		application.Main.mainStage.setScene(application.Main.scene2);
+		try{
+			application.Main.mainStage.setScene(application.Main.scene2);
+		}catch(Exception ep){
+
+		}
+
 	}
 	@FXML
 	public void logoutButtonPressed(ActionEvent e)
 	{
-		application.Main.mainStage.setScene(application.Main.scene1);
+		try{
+			application.Main.mainStage.setScene(application.Main.scene1);
+		}catch(Exception ep){
+
+		}
+
 	}
 	@FXML
 	public void refreshButtonPressed(ActionEvent e)
 	{
-		DbConnect connect = new DbConnect();
+		try{
+			DbConnect connect = new DbConnect();
 
-		Main.clients= connect.getDataClients();
-		data.clear();
-		firstNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("firstName"));
-		lastNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("lastName"));
-		numberCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("idNumber"));
-		dataTable.setEditable(true);
-		for(int i = 0; i < Main.clients.size();i+=3){
-
-			data.add(new Tables(Main.clients.get(i),Main.clients.get(i+1),Main.clients.get(i+2)));
-
-
+			Main.clients= connect.getDataClients();
+			data.clear();
+			firstNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("firstName"));
+			lastNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("lastName"));
+			numberCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("idNumber"));
+			dataTable.setEditable(true);
+			for(int i = 0; i < Main.clients.size();i+=3){
+				data.add(new Tables(Main.clients.get(i),Main.clients.get(i+1),Main.clients.get(i+2)));
+			}
+			dataTable.setItems(data);
+		}catch(Exception ep){
 
 		}
-		dataTable.setItems(data);
+
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
-		// TODO Auto-generated method stub
-		DbConnect connect = new DbConnect();
+		try{
+			DbConnect connect = new DbConnect();
 
-		Main.clients= connect.getDataClients();
-		data.clear();
-		firstNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("firstName"));
-		lastNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("lastName"));
-		numberCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("idNumber"));
-		dataTable.setEditable(true);
-		for(int i = 0; i < Main.clients.size();i+=3)
-		{
-			data.add(new Tables(Main.clients.get(i),Main.clients.get(i+1),Main.clients.get(i+2)));
+			Main.clients= connect.getDataClients();
+			data.clear();
+			firstNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("firstName"));
+			lastNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("lastName"));
+			numberCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("idNumber"));
+			dataTable.setEditable(true);
+			for(int i = 0; i < Main.clients.size();i+=3)
+			{
+				data.add(new Tables(Main.clients.get(i),Main.clients.get(i+1),Main.clients.get(i+2)));
+			}
+			dataTable.setItems(data);
+		}catch(Exception ep){
+
 		}
-		dataTable.setItems(data);
+
 	}
 	@FXML
 	public void addButtonPressed(ActionEvent e) throws IOException{
+		try{
 			System.out.println("yay");
 			Parent root1 = FXMLLoader.load(getClass().getResource("/application/AddGUI.fxml"));
 			Scene scene4 = new Scene(root1);
 			stage1.setScene(scene4);
 			stage1.show();
+		}catch(Exception ep){
+
+		}
+
 	}
 	@FXML
 	public void deleteButtonPressed(ActionEvent e)throws IOException{
-		Parent root2= FXMLLoader.load(getClass().getResource("/application/DeleteClient.fxml"));
-		Scene scene9 = new Scene(root2);
-		stage1.setScene(scene9);
-		stage1.show();
+		try{
+			Parent root2= FXMLLoader.load(getClass().getResource("/application/DeleteClient.fxml"));
+			Scene scene9 = new Scene(root2);
+			stage1.setScene(scene9);
+			stage1.show();
+		}catch(Exception ep){
+
+		}
+
 
 	}
 	@FXML
 	public void editButtonPressed(ActionEvent e) throws IOException{
-		Parent root3= FXMLLoader.load(getClass().getResource("/application/EditGUI.fxml"));
-		Scene scene5 = new Scene(root3);
-		stage1.setScene(scene5);
-		stage1.show();
+		try{
+			Parent root3= FXMLLoader.load(getClass().getResource("/application/EditGUI.fxml"));
+			Scene scene5 = new Scene(root3);
+			stage1.setScene(scene5);
+			stage1.show();
+		}catch(Exception ep){
+
+		}
+
 
 	}
 

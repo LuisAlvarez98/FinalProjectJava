@@ -58,16 +58,9 @@ public class SellDressController implements Initializable {
 				if(!found)
 					total.setText("");
 			}
-
-
-
-
 		}catch(Exception ep){
 
 		}
-
-
-
 	}
 	public static void addSales(String name, int price, String clientName)
 	{

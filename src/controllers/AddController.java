@@ -43,16 +43,26 @@ public class AddController implements Initializable {
 	@FXML
 	public void submitButtonPressed(ActionEvent e)
 	{
-		Stage stage = (Stage) cancelButton.getScene().getWindow();
+		try{
+			Stage stage = (Stage) cancelButton.getScene().getWindow();
 
-		addClients(nameField.getText(),emailField.getText(),phoneField.getText());
-		stage.close();
+			addClients(nameField.getText(),emailField.getText(),phoneField.getText());
+			stage.close();
+		}catch(Exception ep){
+
+		}
+
 	}
 	public void cancelButtonPressed(ActionEvent e)
 	{
-		Stage stage = (Stage) cancelButton.getScene().getWindow();
+		try{
+			Stage stage = (Stage) cancelButton.getScene().getWindow();
 
-		stage.close();
+			stage.close();
+		}catch(Exception ep){
+
+		}
+
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

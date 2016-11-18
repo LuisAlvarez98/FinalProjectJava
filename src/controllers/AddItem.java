@@ -48,19 +48,27 @@ public class AddItem implements Initializable {
 	@FXML
 	public void submitButtonPressed(ActionEvent e)
 	{
-		Stage stage = (Stage) cancelButton.getScene().getWindow();
+		try{
+			Stage stage = (Stage) cancelButton.getScene().getWindow();
 
-		addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
-		stage.close();
+			addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
+			stage.close();
+		}catch(Exception ep){
+
+		}
+
 	}
 	/**
 	 * @param e
 	 */
 	public void cancelButtonPressed(ActionEvent e)
 	{
-		Stage stage = (Stage) cancelButton.getScene().getWindow();
+		try{
+			Stage stage = (Stage) cancelButton.getScene().getWindow();
+			stage.close();
+		}catch(Exception ep){
 
-		stage.close();
+		}
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

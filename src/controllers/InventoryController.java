@@ -37,58 +37,80 @@ public class InventoryController implements Initializable {
 	@FXML
 	public void backButtonPressed(ActionEvent e)
 	{
-		application.Main.mainStage.setScene(application.Main.scene2);
+		try{
+			application.Main.mainStage.setScene(application.Main.scene2);
+		}catch(Exception ep){
+
+		}
+
 	}
 	@FXML
 	public void logoutButtonPressed(ActionEvent e)
 	{
-		application.Main.mainStage.setScene(application.Main.scene1);
+		try{
+			application.Main.mainStage.setScene(application.Main.scene1);
+		}catch(Exception ep){
+
+		}
+
 	}
 	@FXML
 	public void refreshButtonPressed(ActionEvent e)
 	{
-		DbConnect connect = new DbConnect();
+		try{
+			DbConnect connect = new DbConnect();
 
-		Main.inventory= connect.getDataInventory();
-		data.clear();
-		firstNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("firstName"));
-		lastNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("lastName"));
-		numberCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("idNumber"));
-		dataTable.setEditable(true);
-		for(int i = 0; i < Main.inventory.size();i+=3){
+			Main.inventory= connect.getDataInventory();
+			data.clear();
+			firstNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("firstName"));
+			lastNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("lastName"));
+			numberCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("idNumber"));
+			dataTable.setEditable(true);
+			for(int i = 0; i < Main.inventory.size();i+=3){
 
-			data.add(new Tables(Main.inventory.get(i),Main.inventory.get(i+1),Main.inventory.get(i+2)));
-
-
+				data.add(new Tables(Main.inventory.get(i),Main.inventory.get(i+1),Main.inventory.get(i+2)));
+			}
+			dataTable.setItems(data);
+		}catch(Exception ep){
 
 		}
-		dataTable.setItems(data);
+
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
 		// TODO Auto-generated method stub
-		DbConnect connect = new DbConnect();
+		try{
+			DbConnect connect = new DbConnect();
 
-		Main.inventory= connect.getDataInventory();
-		data.clear();
-		firstNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("firstName"));
-		lastNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("lastName"));
-		numberCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("idNumber"));
-		dataTable.setEditable(true);
-		for(int i = 0; i < Main.inventory.size();i+=3)
-		{
-			data.add(new Tables(Main.inventory.get(i),Main.inventory.get(i+1),Main.inventory.get(i+2)));
+			Main.inventory= connect.getDataInventory();
+			data.clear();
+			firstNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("firstName"));
+			lastNameCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("lastName"));
+			numberCol.setCellValueFactory(new PropertyValueFactory<Tables, String>("idNumber"));
+			dataTable.setEditable(true);
+			for(int i = 0; i < Main.inventory.size();i+=3)
+			{
+				data.add(new Tables(Main.inventory.get(i),Main.inventory.get(i+1),Main.inventory.get(i+2)));
+			}
+			dataTable.setItems(data);
+		}catch(Exception ep){
+
 		}
-		dataTable.setItems(data);
+
 	}
 	@FXML
 	public void addButtonPressed(ActionEvent e) throws IOException{
-		System.out.println("yay");
-		Parent root1 = FXMLLoader.load(getClass().getResource("/application/AddItem.fxml"));
-		Scene scene10 = new Scene(root1);
-		stage1.setScene(scene10);
-		stage1.show();
+
+		try{
+			Parent root1 = FXMLLoader.load(getClass().getResource("/application/AddItem.fxml"));
+			Scene scene10 = new Scene(root1);
+			stage1.setScene(scene10);
+			stage1.show();
+		}catch(Exception ep){
+
+		}
+
 	}
 	@FXML
 	public void editButtonPressed(ActionEvent e){
@@ -96,10 +118,15 @@ public class InventoryController implements Initializable {
 	}
 	@FXML
 	public void deleteButtonPressed(ActionEvent e) throws IOException{
-		Parent root2 = FXMLLoader.load(getClass().getResource("/application/DeleteItem.fxml"));
-		Scene scene11= new Scene(root2);
-		stage1.setScene(scene11);
-		stage1.show();
+		try{
+			Parent root2 = FXMLLoader.load(getClass().getResource("/application/DeleteItem.fxml"));
+			Scene scene11= new Scene(root2);
+			stage1.setScene(scene11);
+			stage1.show();
+
+		}catch(Exception ep){
+
+		}
 
 	}
 }

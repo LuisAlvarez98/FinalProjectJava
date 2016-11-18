@@ -42,15 +42,24 @@ public class DeleteClient implements Initializable {
 	}
 	@FXML
 	public void submitButtonPressed(ActionEvent e){
-		Stage stage = (Stage) cancelButton.getScene().getWindow();
-		removeClients(nameField.getText());
-		stage.close();
+		try{
+			Stage stage = (Stage) cancelButton.getScene().getWindow();
+			removeClients(nameField.getText());
+			stage.close();
+		}catch(Exception ep){
+
+		}
+
 	}
 	@FXML
 	public void cancelButtonPressed(ActionEvent e){
-		Stage stage = (Stage) cancelButton.getScene().getWindow();
+		try{
+			Stage stage = (Stage) cancelButton.getScene().getWindow();
+			stage.close();
+		}catch(Exception ep){
 
-		stage.close();
+		}
+
 	}
 
 }
