@@ -66,8 +66,6 @@ public class LoginController implements Initializable {
 				}
 			}
 
-
-
 		}catch(Exception ep){
 
 		}
