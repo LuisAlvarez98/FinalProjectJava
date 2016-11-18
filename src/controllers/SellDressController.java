@@ -52,13 +52,16 @@ public class SellDressController implements Initializable {
 				if(dressSelector.getValue().equals(Main.inventory.get(i))){
 					total.setText(Main.inventory.get(i+1));
 					found = true;
+					addSales(dressSelector.getValue(),Integer.parseInt(total.getText()),clientSelector.getValue());
 				}
 
 				if(!found)
 					total.setText("");
 			}
 
-			addSales(dressSelector.getValue(),Integer.parseInt(total.getText()),clientSelector.getValue());
+
+
+
 		}catch(Exception ep){
 
 		}

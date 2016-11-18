@@ -8,10 +8,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 
@@ -47,6 +49,10 @@ public class Main extends Application {
 	public static Scene scene10;
 	public static Scene scene11;
 	public static Stage mainStage;
+	public static String user;
+
+
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {

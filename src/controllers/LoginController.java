@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -56,6 +57,8 @@ public class LoginController implements Initializable {
 				application.Main.mainStage = (Stage) submitButton.getScene().getWindow();
 				application.Main.mainStage.setScene(application.Main.scene2);
 				accessDenied.setText("");
+				Main.user = userField.getText();
+
 			}else if(!userField.getText().equals(users.get(i))){
 				accessDenied.setText("Wrong Credentials");
 			}else{
