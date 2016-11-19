@@ -23,6 +23,16 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+/**
+ * InventoryController Class
+ * In charge of displaying the inventory information in a table,
+ * you can add, edit and delete elements.
+ *
+ * @author Luis Alvarez
+ * @since 09/10/2016
+ * @version 1.0
+ *
+ */
 public class InventoryController implements Initializable {
 	@FXML private Button addButton,editButton,deleteButton,backButton,logoutButton,refreshButton;
 
@@ -30,10 +40,15 @@ public class InventoryController implements Initializable {
 	@FXML private TableColumn<Tables, String> firstNameCol,lastNameCol,numberCol;
 
 	public Stage stage1 = new Stage();
-		private ObservableList<Tables> data = FXCollections.observableArrayList();
+	private ObservableList<Tables> data = FXCollections.observableArrayList();
 
 
 
+	/**
+	 * backButtonPressed Method
+	 * Takes you back to the main menu
+	 * @param e
+	 */
 	@FXML
 	public void backButtonPressed(ActionEvent e)
 	{
@@ -44,6 +59,11 @@ public class InventoryController implements Initializable {
 		}
 
 	}
+	/**
+	 * logoutButtonPressed Method
+	 * Takes you back to the login screen
+	 * @param e
+	 */
 	@FXML
 	public void logoutButtonPressed(ActionEvent e)
 	{
@@ -54,6 +74,11 @@ public class InventoryController implements Initializable {
 		}
 
 	}
+	/**
+	 * refreshButtonPressed Method
+	 * In charge of refreshing the inventoryTable
+	 * @param e
+	 */
 	@FXML
 	public void refreshButtonPressed(ActionEvent e)
 	{
@@ -99,6 +124,13 @@ public class InventoryController implements Initializable {
 		}
 
 	}
+	/**
+	 * addButtonPressed Method
+	 *
+	 * A pop out appears, so you can add elements
+	 * @param e
+	 * @throws IOException
+	 */
 	@FXML
 	public void addButtonPressed(ActionEvent e) throws IOException{
 
@@ -112,10 +144,23 @@ public class InventoryController implements Initializable {
 		}
 
 	}
+	/**
+	 * editButtonPressed Method
+	 *
+	 * A pop out appears, so you can edit elements
+	 * @param e
+	 */
 	@FXML
 	public void editButtonPressed(ActionEvent e){
 
 	}
+	/**
+	 * deleteButtonPressed Method
+	 *
+	 * A pop out appears, so you can delete elements
+	 * @param e
+	 * @throws IOException
+	 */
 	@FXML
 	public void deleteButtonPressed(ActionEvent e) throws IOException{
 		try{

@@ -23,6 +23,16 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+/**
+ * ClientsController
+ * In charge of showing the Clients information in a table,
+ * you can add, edit and delete elements.
+ *
+ * @author Luis Alvarez
+ * @since 09/10/2016
+ * @version 1.0
+ *
+ */
 public class ClientsController implements Initializable {
 	@FXML private Button addButton;
 	@FXML private Button deleteButton;
@@ -41,6 +51,11 @@ public class ClientsController implements Initializable {
 		ArrayList<String> clients =  new ArrayList<String>();
 
 
+	/**
+	 * backButtonPressed Method
+	 * Takes you to the Main Menu
+	 * @param e
+	 */
 	@FXML
 	public void backButtonPressed(ActionEvent e)
 	{
@@ -51,6 +66,11 @@ public class ClientsController implements Initializable {
 		}
 
 	}
+	/**
+	 * logoutButtonPressed Method
+	 * Takes you to the login screen
+	 * @param e
+	 */
 	@FXML
 	public void logoutButtonPressed(ActionEvent e)
 	{
@@ -61,6 +81,11 @@ public class ClientsController implements Initializable {
 		}
 
 	}
+	/**
+	 * refreshButtonPressed Method
+	 * In charge of refreshing the table with the new data
+	 * @param e
+	 */
 	@FXML
 	public void refreshButtonPressed(ActionEvent e)
 	{
@@ -104,6 +129,12 @@ public class ClientsController implements Initializable {
 		}
 
 	}
+	/**
+	 * addButtonPressed Method
+	 * In charge of opening the pop up of addController
+	 * @param e
+	 * @throws IOException
+	 */
 	@FXML
 	public void addButtonPressed(ActionEvent e) throws IOException{
 		try{
@@ -117,6 +148,12 @@ public class ClientsController implements Initializable {
 		}
 
 	}
+	/**
+	 * deleteButtonPressed Method
+	 * In charge of opening the pop up of DeleteClient
+	 * @param e
+	 * @throws IOException
+	 */
 	@FXML
 	public void deleteButtonPressed(ActionEvent e)throws IOException{
 		try{
@@ -130,6 +167,12 @@ public class ClientsController implements Initializable {
 
 
 	}
+	/**
+	 * editButtonPressed Method
+	 * In charge of opening the pop up of EditController
+	 * @param e
+	 * @throws IOException
+	 */
 	@FXML
 	public void editButtonPressed(ActionEvent e) throws IOException{
 		try{

@@ -13,11 +13,25 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * DeleteClient Class
+ * Deletes an item from the clients data
+ *
+ * @author Luis Alvarez
+ * @since 09/10/2016
+ * @version 1.0
+ *
+ */
 public class DeleteClient implements Initializable {
 
 	@FXML public Button submitButton,cancelButton;
 	@FXML public TextField nameField;
 
+	/**
+	 * removeClients Method
+	 * A query that is in charge of deleting rows from the clients data
+	 * @param name
+	 */
 	public static void removeClients(String name){
 		try{
 			PreparedStatement statement = (PreparedStatement) Main.con.prepareStatement("DELETE FROM clients WHERE name =?");
@@ -40,6 +54,11 @@ public class DeleteClient implements Initializable {
 		// TODO Auto-generated method stub
 
 	}
+	/**
+	 * submitButtonPressed Method
+	 * Closes the window and removes the Item from the clients table
+	 * @param e
+	 */
 	@FXML
 	public void submitButtonPressed(ActionEvent e){
 		try{
@@ -51,6 +70,11 @@ public class DeleteClient implements Initializable {
 		}
 
 	}
+	/**
+	 * cancelButtonPressed Method
+	 * Closes the window
+	 * @param e
+	 */
 	@FXML
 	public void cancelButtonPressed(ActionEvent e){
 		try{

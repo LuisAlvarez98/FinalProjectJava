@@ -11,12 +11,20 @@ import java.util.ArrayList;
 import application.Main;
 
 /**
+ * DbConnect Class
+ * In charge of connecting the java application to the MySQL database, also in charge of
+ * getting all the data from the tables in the database.
+ *
  * @author Luis Alvarez
+ * @since 09/10/2016
+ * @version 1.0
  *
  */
 public class DbConnect
 {
 	/**
+	 *DbConnect Constructor
+	 *In charge of connecting the java application to the MySQL database
 	 *
 	 */
 	public DbConnect()
@@ -31,6 +39,11 @@ public class DbConnect
 			System.out.print("Error" + e);
 		}
 	}
+	/**
+	 * getDataUser Method
+	 * Query in charge of getting the data from the users table
+	 * @return users
+	 */
 	public ArrayList<String> getDataUser()
 	{
 		ArrayList<String>users= new ArrayList<String>();
@@ -54,6 +67,11 @@ public class DbConnect
 		return users;
 	}
 
+	/**
+	 * getDataPass Method
+	 * A query in charge of getting the data from the users table
+	 * @return passwords
+	 */
 	public ArrayList<String> getDataPass()
 	{
 		ArrayList<String>passwords= new ArrayList<String>();
@@ -76,6 +94,11 @@ public class DbConnect
 		}
 		return passwords;
 	}
+	/**
+	 * getDataSales Method
+	 * A query in charge of getting all the data from the sales table
+	 * @return tableData
+	 */
 	public ArrayList<String> getDataSales()
 	{
 		ArrayList<String> tableData = new ArrayList<String>();
@@ -103,6 +126,11 @@ public class DbConnect
 		}
 		return tableData;
 	}
+	/**
+	 * getDataClients Method
+	 * A query in charge of getting all the data from the clients table
+	 * @return tableData
+	 */
 	public ArrayList<String> getDataClients()
 	{
 		ArrayList<String> tableData = new ArrayList<String>();
@@ -129,6 +157,11 @@ public class DbConnect
 		}
 		return tableData;
 	}
+	/**
+	 * getDataInventory Method
+	 * A query in charge of getting all the data from the inventory table
+	 * @return tableData
+	 */
 	public ArrayList<String> getDataInventory()
 	{
 		ArrayList<String> tableData = new ArrayList<String>();

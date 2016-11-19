@@ -13,12 +13,26 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * DeleteItem Class
+ * Deletes an item from the inventory data
+ *
+ * @author Luis Alvarez
+ * @since 09/10/2016
+ * @version 1.0
+ *
+ */
 public class DeleteItem implements Initializable {
 
 	@FXML public Button submitButton,cancelButton;
 	@FXML public TextField nameField;
 
-	public static void removeClients(String name){
+	/**
+	 * removeItems Method
+	 * A query that is in charge of deleting rows from the inventory data
+	 * @param name
+	 */
+	public static void removeItems(String name){
 		try{
 			PreparedStatement statement = (PreparedStatement) Main.con.prepareStatement("DELETE FROM inventory WHERE name =?");
 
@@ -40,17 +54,27 @@ public class DeleteItem implements Initializable {
 		// TODO Auto-generated method stub
 
 	}
+	/**
+	 * submitButtonPressed Method
+	 * Closes the window and removes the Item from the inventory table
+	 * @param e
+	 */
 	@FXML
 	public void submitButtonPressed(ActionEvent e){
 		try{
 			Stage stage = (Stage) cancelButton.getScene().getWindow();
-			removeClients(nameField.getText());
+			removeItems(nameField.getText());
 			stage.close();
 		}catch(Exception ep){
 
 		}
 
 	}
+	/**
+	 * cancelButtonPressed Method
+	 * Closes the window
+	 * @param e
+	 */
 	@FXML
 	public void cancelButtonPressed(ActionEvent e){
 		try{
