@@ -17,13 +17,12 @@ import application.Main;
 public class DbConnect
 {
 	/**
-	 * 
+	 *
 	 */
 	public DbConnect()
 	{
 		try
 		{
-
 				Class.forName("com.mysql.jdbc.Driver");
 				Main.con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lg","root","");
 				Main.st = Main.con.createStatement();
@@ -46,7 +45,7 @@ public class DbConnect
 				String user = Main.rs.getString("user");
 
 				users.add(user);
-			
+
 			}
 		}catch(Exception e)
 		{
@@ -69,7 +68,7 @@ public class DbConnect
 				String pass =  Main.rs.getString("pass");
 
 				passwords.add(pass);
-				
+
 			}
 		}catch(Exception e)
 		{
