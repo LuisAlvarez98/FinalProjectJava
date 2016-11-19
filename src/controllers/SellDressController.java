@@ -18,6 +18,15 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+/**
+ * SellDressController Class
+ * Shop system
+ *
+ * @author Luis Alvarez
+ * @since 09/10/2016
+ * @version 1.0
+ *
+ */
 public class SellDressController implements Initializable {
 
 
@@ -28,17 +37,32 @@ public class SellDressController implements Initializable {
 	@FXML private Label total;
 
 
+	/**
+	 * backButtonPressed
+	 * Takes you back to the main menu
+	 * @param e
+	 */
 	@FXML
 	public void backButtonPressed(ActionEvent e)
 	{
 		application.Main.mainStage.setScene(application.Main.scene2);
 	}
+	/**
+	 * logoutButtonPressed
+	 * Takes you back to the log in screen
+	 * @param e
+	 */
 	@FXML
 	public void logoutButtonPressed(ActionEvent e)
 	{
 		application.Main.mainStage.setScene(application.Main.scene1);
 	}
 
+	/**
+	 * payButtonPressed Method
+	 * Calculates the total and send the information to the sales table
+	 * @param e
+	 */
 	@FXML
 	public void payButtonPressed(ActionEvent e){
 
@@ -62,6 +86,13 @@ public class SellDressController implements Initializable {
 
 		}
 	}
+	/**
+	 * addSales Method
+	 * A query that is in charge of sending all the info inputed by the user to the sales table
+	 * @param name
+	 * @param price
+	 * @param clientName
+	 */
 	public static void addSales(String name, int price, String clientName)
 	{
 		try{
@@ -81,6 +112,11 @@ public class SellDressController implements Initializable {
 		}
 	}
 
+	/**
+	 * cancelButtonPressed Method
+	 * Cancels the transaction and sends you back to the main menu
+	 * @param e
+	 */
 	@FXML
 	public void cancelButtonPressed(ActionEvent e){
 		application.Main.mainStage.setScene(application.Main.scene2);
@@ -91,7 +127,7 @@ public class SellDressController implements Initializable {
 
 		DbConnect connect = new DbConnect();
 		Main.inventory= connect.getDataInventory();
-
+		//Fills the Choice Box of Dresses
 		ObservableList<String> dressList = FXCollections.observableArrayList();
 
 		for(int i = 0; i < Main.inventory.size();i+=3)
@@ -103,7 +139,7 @@ public class SellDressController implements Initializable {
 
 		DbConnect connect2= new DbConnect();
 		Main.clients= connect2.getDataClients();
-
+		//Fills the Choice Box of Clients
 		ObservableList<String> clientList = FXCollections.observableArrayList();
 
 		for(int i = 0; i < Main.clients.size();i+=3)

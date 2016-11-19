@@ -14,6 +14,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * LoginController Class
+ * In charge of validating User and Password
+ *
+ * @author Luis Alvarez
+ * @since 09/10/2016
+ * @version 1.0
+ */
 public class LoginController implements Initializable {
 
 	@FXML TextField userField,passField,showPassField;
@@ -31,10 +39,21 @@ public class LoginController implements Initializable {
 		// TODO Auto-generated method stub
 		accessDenied.setText("");
 	}
+	/**onEnter Method
+	 * Validates User and password if true, it takes you to the main menu
+	 * @param ae
+	 */
 	@FXML
 	public void onEnter(ActionEvent ae){
 	  submitButtonPressed(ae);
 	}
+	/**
+	 * submitButtonPressed Method
+	 * Validates user and password if true, it takes you to the main menu
+	 * if false, it displays you a message "Wrong credentials"
+	 *
+	 * @param event
+	 */
 	@FXML
 	public void submitButtonPressed(ActionEvent event)
 	{
@@ -71,6 +90,11 @@ public class LoginController implements Initializable {
 		}
 
 	}
+	/**
+	 * showPasswordPressed Method
+	 * CheckBox: shows or hide password
+	 * @param e
+	 */
 	@FXML
 	public void showPasswordPressed(ActionEvent e){
 		try{
