@@ -36,6 +36,7 @@ public class SellDressController implements Initializable {
 
 	@FXML private Label total;
 
+	boolean flag = true;
 
 	/**
 	 * backButtonPressed
@@ -137,6 +138,9 @@ public class SellDressController implements Initializable {
 
 		dressSelector.setItems(dressList);
 
+
+
+
 		DbConnect connect2= new DbConnect();
 		Main.clients= connect2.getDataClients();
 		//Fills the Choice Box of Clients
@@ -149,6 +153,7 @@ public class SellDressController implements Initializable {
 
 		clientSelector.setItems(clientList);
 	}
+
 
 
 }

@@ -34,7 +34,7 @@ public class EditController implements Initializable {
 	public void submitButtonPressed(ActionEvent e)
 	{
 
-
+		editClients(nameField.getText(),emailField.getText(),phoneField.getText(),searchField.getText());
 	}
 	@FXML
 	public void cancelButtonPressed(ActionEvent e)
@@ -46,6 +46,25 @@ public class EditController implements Initializable {
 		System.out.println("search working");
 
 	}
+	public static void editClients(String newName, String email,String phone,String name){
+		try{
+			PreparedStatement statement = (PreparedStatement) Main.con.prepareStatement("UPDATE clients SET name=?, email=?, phone=? WHERE name=?");
+
+			statement.setString(1,newName);
+			statement.setString(2,email);
+			statement.setString(3,phone);
+			statement.setString(4,name);
+			statement.executeUpdate();
+			statement.close();
+
+			Main.con.close();
+
+			System.out.println("works");
+		}catch(Exception e){
+			System.out.print("Error" + e);
+		}
+	}
+
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
