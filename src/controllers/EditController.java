@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class EditController implements Initializable {
 
@@ -25,7 +26,8 @@ public class EditController implements Initializable {
 	@FXML
 	private  TextField phoneField;
 	@FXML
-	private  TextField emailField;
+	private TextField emailField;
+
 
 
 
@@ -35,17 +37,42 @@ public class EditController implements Initializable {
 	{
 
 		editClients(nameField.getText(),emailField.getText(),phoneField.getText(),searchField.getText());
+		Stage stage = (Stage) submitButton.getScene().getWindow();
+		stage.close();
 	}
 	@FXML
 	public void cancelButtonPressed(ActionEvent e)
 	{
 		System.out.println("cancel work");
+		Stage stage = (Stage) cancelButton.getScene().getWindow();
+		stage.close();
 	}
 	@FXML
 	public void searchButtonPressed(ActionEvent e){
 		System.out.println("search working");
 
+
 	}
+//	public static void getClient( String name){
+//		try{
+//			PreparedStatement statement = (PreparedStatement) Main.con.prepareStatement("select * from clients WHERE name=?");
+//
+//
+//			statement.setString(1,name);
+//			statement.executeUpdate();
+//			statement.close();
+//
+//			name = Main.rs.getString("name");
+//			email =Main.rs.getString("email");
+//			phone = Main.rs.getString("phone");
+//
+//			Main.con.close();
+//
+//			System.out.println("works");
+//		}catch(Exception e){
+//			System.out.print("Error" + e);
+//		}
+//	}
 	public static void editClients(String newName, String email,String phone,String name){
 		try{
 			PreparedStatement statement = (PreparedStatement) Main.con.prepareStatement("UPDATE clients SET name=?, email=?, phone=? WHERE name=?");
