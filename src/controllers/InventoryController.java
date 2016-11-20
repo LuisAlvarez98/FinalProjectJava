@@ -18,8 +18,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -38,6 +40,8 @@ public class InventoryController implements Initializable {
 
 	@FXML private TableView<Tables> dataTable;
 	@FXML private TableColumn<Tables, String> firstNameCol,lastNameCol,numberCol;
+	@FXML private TextField nameField,newNameField, priceField,quantityField;
+	@FXML private Label editLabel;
 
 	public Stage stage1 = new Stage();
 	private ObservableList<Tables> data = FXCollections.observableArrayList();
@@ -153,7 +157,35 @@ public class InventoryController implements Initializable {
 	 */
 	@FXML
 	public void editButtonPressed(ActionEvent e){
+		try
+		{
+			String value0 = nameField.getText();
+			String value1 = newNameField.getText();
+			String value2 = priceField.getText();
+			String value3 = quantityField.getText();
+			if(value0.equals("")){
+				editLabel.setText("Please input the name you desire to edit.");
+			}else if(value1.equals("")){
+				editLabel.setText("Please input a new name.");
+			}else if(value2.equals("")){
+				editLabel.setText("Please input a new price.");
+			}else if(value3.equals("")){
+				editLabel.setText("Please input a new quantity.");
+			}else{
+				String sql="update inventory set name='"+value1+"',price='"+value2+"',quantity='"+value3+"'where  name='"+value0+"' ";
+				java.sql.PreparedStatement st = Main.con.prepareStatement(sql);
+				st.execute();
+				editLabel.setText(" ");
+				nameField.setText("");
+				newNameField.setText("");
+				priceField.setText("");
+				quantityField.setText("");
+			}
 
+			System.out.println("working");
+		}catch(Exception ep){
+
+		}
 	}
 	/**
 	 * deleteButtonPressed Method

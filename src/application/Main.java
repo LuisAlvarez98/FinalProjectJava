@@ -60,7 +60,7 @@ public class Main extends Application {
 			second = FXMLLoader.load(getClass().getResource("/application/MainMenuGUI.fxml"));
 		//	third = FXMLLoader.load(getClass().getResource("/application/InventoryGUI.fxml"));
 			fourth = FXMLLoader.load(getClass().getResource("/application/AddGUI.fxml"));
-			fifth = FXMLLoader.load(getClass().getResource("/application/EditGUI.fxml"));
+
 			//six = FXMLLoader.load(getClass().getResource("/application/SalesGUI.fxml"));
 		//	seven = FXMLLoader.load(getClass().getResource("/application/ClientsGUI.fxml"));
 		//	eight = FXMLLoader.load(getClass().getResource("/application/SaleDressGUI.fxml"));
@@ -71,7 +71,7 @@ public class Main extends Application {
 			scene2 = new Scene(second);
 			//scene3 = new Scene(third);
 			scene4 = new Scene(fourth);
-			scene5 = new Scene(fifth);
+
 			//scene6 = new Scene(six);
 			//scene7 = new Scene(seven);
 			//scene8 = new Scene(eight);
@@ -79,7 +79,7 @@ public class Main extends Application {
 			scene10 = new Scene(ten);
 			scene11 = new Scene(eleven);
 			primaryStage.setResizable(false);
-			
+
 			scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene1);
 

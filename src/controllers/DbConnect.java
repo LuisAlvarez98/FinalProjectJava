@@ -159,7 +159,7 @@ public class DbConnect
 	}
 	/**
 	 * getDataInventory Method
-	 * A query in charge of getting all the data from the inventory table
+	 * A query in charge of getting all the data from the inventor
 	 * @return tableData
 	 */
 	public ArrayList<String> getDataInventory()

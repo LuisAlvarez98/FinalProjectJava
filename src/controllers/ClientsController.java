@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.mysql.jdbc.PreparedStatement;
+
 import application.Main;
 import application.Tables;
 import javafx.collections.FXCollections;
@@ -18,8 +20,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -39,12 +43,16 @@ public class ClientsController implements Initializable {
 	@FXML private Button editButton;
 	@FXML private Button backButton;
 	@FXML private Button logoutButton;
+	@FXML private TextField nameField,emailField,phoneField,newNameField;
+	@FXML private Label editLabel;
 
 	@FXML private Button refreshButton;
 	@FXML private TableView<Tables> dataTable;
 	@FXML private TableColumn<Tables, String> firstNameCol;
 	@FXML private TableColumn<Tables, String> lastNameCol;
 	@FXML private TableColumn<Tables, String> numberCol;
+
+
 	public Stage stage1 = new Stage();
 	public Stage stage2 = new Stage();
 		private ObservableList<Tables> data = FXCollections.observableArrayList();
@@ -80,6 +88,7 @@ public class ClientsController implements Initializable {
 
 		}
 
+
 	}
 	/**
 	 * refreshButtonPressed Method
@@ -105,6 +114,7 @@ public class ClientsController implements Initializable {
 		}catch(Exception ep){
 
 		}
+
 
 	}
 	@Override
@@ -144,6 +154,7 @@ public class ClientsController implements Initializable {
 			stage1.setScene(scene4);
 			stage1.setResizable(false);
 			stage1.show();
+
 		}catch(Exception ep){
 
 		}
@@ -163,6 +174,7 @@ public class ClientsController implements Initializable {
 			stage1.setScene(scene9);
 			stage1.setResizable(false);
 			stage1.show();
+
 		}catch(Exception ep){
 
 		}
@@ -177,12 +189,32 @@ public class ClientsController implements Initializable {
 	 */
 	@FXML
 	public void editButtonPressed(ActionEvent e) throws IOException{
-		try{
-			Parent root3= FXMLLoader.load(getClass().getResource("/application/EditGUI.fxml"));
-			Scene scene5 = new Scene(root3);
-			stage1.setScene(scene5);
-			 stage1.setResizable(false);
-			stage1.show();
+		try
+		{
+			String value0 = nameField.getText();
+			String value1 = newNameField.getText();
+			String value2 = emailField.getText();
+			String value3 = phoneField.getText();
+			if(value0.equals("")){
+				editLabel.setText("Please input the name you desire to edit.");
+			}else if(value1.equals("")){
+				editLabel.setText("Please input a new name.");
+			}else if(value2.equals("")){
+				editLabel.setText("Please input a new email.");
+			}else if(value3.equals("")){
+				editLabel.setText("Please input a new phone.");
+			}else{
+				String sql="update clients set name='"+value1+"',email='"+value2+"',phone='"+value3+"'where  name='"+value0+"' ";
+				java.sql.PreparedStatement st = Main.con.prepareStatement(sql);
+				st.execute();
+				editLabel.setText(" ");
+				nameField.setText("");
+				newNameField.setText("");
+				emailField.setText("");
+				phoneField.setText("");
+			}
+
+			System.out.println("working");
 		}catch(Exception ep){
 
 		}

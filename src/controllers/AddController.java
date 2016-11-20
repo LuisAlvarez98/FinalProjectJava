@@ -44,9 +44,11 @@ public class AddController implements Initializable {
 	public void submitButtonPressed(ActionEvent e)
 	{
 		try{
+
 			Stage stage = (Stage) cancelButton.getScene().getWindow();
 
 			addClients(nameField.getText(),emailField.getText(),phoneField.getText());
+
 			stage.close();
 		}catch(Exception ep){
 
