@@ -142,6 +142,7 @@ public class ClientsController implements Initializable {
 			Parent root1 = FXMLLoader.load(getClass().getResource("/application/AddGUI.fxml"));
 			Scene scene4 = new Scene(root1);
 			stage1.setScene(scene4);
+			stage1.setResizable(false);
 			stage1.show();
 		}catch(Exception ep){
 
@@ -160,6 +161,7 @@ public class ClientsController implements Initializable {
 			Parent root2= FXMLLoader.load(getClass().getResource("/application/DeleteClient.fxml"));
 			Scene scene9 = new Scene(root2);
 			stage1.setScene(scene9);
+			stage1.setResizable(false);
 			stage1.show();
 		}catch(Exception ep){
 
@@ -179,6 +181,7 @@ public class ClientsController implements Initializable {
 			Parent root3= FXMLLoader.load(getClass().getResource("/application/EditGUI.fxml"));
 			Scene scene5 = new Scene(root3);
 			stage1.setScene(scene5);
+			 stage1.setResizable(false);
 			stage1.show();
 		}catch(Exception ep){
 

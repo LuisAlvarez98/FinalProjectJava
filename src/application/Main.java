@@ -79,8 +79,10 @@ public class Main extends Application {
 			scene10 = new Scene(ten);
 			scene11 = new Scene(eleven);
 			primaryStage.setResizable(false);
+			
 			scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene1);
+
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

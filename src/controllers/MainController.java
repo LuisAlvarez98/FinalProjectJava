@@ -48,6 +48,7 @@ public class MainController implements Initializable {
 				 root = FXMLLoader.load(getClass().getResource("/application/LoginGUI.fxml"));
 				 scene1 = new Scene(root);
 				 application.Main.mainStage.setScene(scene1);
+				 Main.mainStage.setResizable(false);
 	}
 	/**
 	 * inventoryButtonPressed
@@ -63,6 +64,7 @@ public class MainController implements Initializable {
 				 three = FXMLLoader.load(getClass().getResource("/application/InventoryGUI.fxml"));
 				 scene3 = new Scene(three);
 				 application.Main.mainStage.setScene(scene3);
+				 Main.mainStage.setResizable(false);
 	}
 	/**
 	 * salesButtonPressed
@@ -79,6 +81,7 @@ public class MainController implements Initializable {
 				 six = FXMLLoader.load(getClass().getResource("/application/SalesGUI.fxml"));
 				 scene6 = new Scene(six);
 				 application.Main.mainStage.setScene(scene6);
+				 Main.mainStage.setResizable(false);
 	}
 	/**
 	 * clientsButtonPressed
@@ -95,6 +98,7 @@ public class MainController implements Initializable {
 				 seven = FXMLLoader.load(getClass().getResource("/application/ClientsGUI.fxml"));
 				 scene7 = new Scene(seven);
 				 application.Main.mainStage.setScene(scene7);
+				 Main.mainStage.setResizable(false);
 	}
 	/**
 	 * sellDressButtonPressed
@@ -111,5 +115,6 @@ public class MainController implements Initializable {
 		 	eight = FXMLLoader.load(getClass().getResource("/application/SaleDressGUI.fxml"));
 		 	scene8 = new Scene(eight);
 		 	application.Main.mainStage.setScene(scene8);
+		 	 Main.mainStage.setResizable(false);
 	}
 }

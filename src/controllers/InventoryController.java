@@ -138,6 +138,7 @@ public class InventoryController implements Initializable {
 			Parent root1 = FXMLLoader.load(getClass().getResource("/application/AddItem.fxml"));
 			Scene scene10 = new Scene(root1);
 			stage1.setScene(scene10);
+			stage1.setResizable(false);
 			stage1.show();
 		}catch(Exception ep){
 
@@ -167,6 +168,7 @@ public class InventoryController implements Initializable {
 			Parent root2 = FXMLLoader.load(getClass().getResource("/application/DeleteItem.fxml"));
 			Scene scene11= new Scene(root2);
 			stage1.setScene(scene11);
+			stage1.setResizable(false);
 			stage1.show();
 
 		}catch(Exception ep){
