@@ -78,7 +78,11 @@ public class SellDressController implements Initializable {
 					total.setText(Main.inventory.get(i+1));
 					found = true;
 					addSales(dressSelector.getValue(),Integer.parseInt(total.getText()),clientSelector.getValue());
-
+					updateInventory((Integer.parseInt(Main.inventory.get(i+2))-1),dressSelector.getValue());
+					if(Integer.parseInt(Main.inventory.get(i+2)) <= 1){
+						deleteDress(dressSelector.getValue());
+					}
+					System.out.println(Integer.parseInt(Main.inventory.get(i+2)));
 				}
 				if(!found)
 					total.setText("");
@@ -103,16 +107,35 @@ public class SellDressController implements Initializable {
 			statement.setInt(2,price);
 			statement.setString(3,clientName);
 			statement.executeUpdate();
-			statement.close();
 
-			Main.con.close();
 
 			System.out.println("works");
 		}catch(Exception e){
 			System.out.print("Error" + e);
 		}
 	}
+	public static void updateInventory(int quantity, String dressName){
+		try{
 
+			String sql="update inventory set quantity='"+quantity+"' where  name='"+dressName+"' ";
+
+			java.sql.PreparedStatement st = Main.con.prepareStatement(sql);
+			st.execute();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	public static void deleteDress(String dressName){
+		try{
+			String sql="DELETE FROM inventory WHERE name ='"+dressName+"'";
+
+			java.sql.PreparedStatement st = Main.con.prepareStatement(sql);
+			st.execute();
+		}catch(Exception e){
+
+		}
+
+	}
 	/**
 	 * cancelButtonPressed Method
 	 * Cancels the transaction and sends you back to the main menu
