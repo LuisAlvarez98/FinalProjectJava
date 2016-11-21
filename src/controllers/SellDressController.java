@@ -82,7 +82,6 @@ public class SellDressController implements Initializable {
 					if(Integer.parseInt(Main.inventory.get(i+2)) <= 1){
 						deleteDress(dressSelector.getValue());
 					}
-					System.out.println(Integer.parseInt(Main.inventory.get(i+2)));
 				}
 				if(!found)
 					total.setText("");
