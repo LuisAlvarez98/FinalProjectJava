@@ -38,7 +38,6 @@ public class AddItem implements Initializable {
 			statement.executeUpdate();
 			statement.close();
 
-			Main.con.close();
 
 			System.out.println("works");
 		}catch(Exception e){
@@ -54,8 +53,24 @@ public class AddItem implements Initializable {
 	{
 		try{
 			Stage stage = (Stage) cancelButton.getScene().getWindow();
+			DbConnect db = new DbConnect();
+			Main.inventory = db.getDataInventory();
 
-			addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
+			for(int i = 0 ; i < Main.inventory.size();i+=3){
+				if(nameField.getText().equals(Main.inventory.get(i))){
+					System.out.println("Repeated");
+
+				}else if(!(nameField.getText().equals(Main.inventory.get(i)))){
+
+					System.out.println("not repeated");
+					addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
+
+				}
+
+
+
+			}
+
 			stage.close();
 		}catch(Exception ep){
 
@@ -77,9 +92,9 @@ public class AddItem implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
-			
-		
+
+
+
 	}
 
 }
