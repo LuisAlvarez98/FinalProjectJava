@@ -52,24 +52,11 @@ public class AddItem implements Initializable {
 	public void submitButtonPressed(ActionEvent e)
 	{
 		try{
-			Stage stage = (Stage) cancelButton.getScene().getWindow();
-			DbConnect db = new DbConnect();
-			Main.inventory = db.getDataInventory();
+			Stage stage = (Stage) submitButton.getScene().getWindow();
 
-			for(int i = 0 ; i < Main.inventory.size();i+=3){
-				if(nameField.getText().equals(Main.inventory.get(i))){
-					System.out.println("Repeated");
-
-				}else if(!(nameField.getText().equals(Main.inventory.get(i)))){
-
-					System.out.println("not repeated");
-					addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
-
-				}
+			addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
 
 
-
-			}
 
 			stage.close();
 		}catch(Exception ep){
