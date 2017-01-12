@@ -38,8 +38,8 @@ import javafx.stage.Stage;
 public class InventoryController implements Initializable {
 	@FXML private Button addButton,editButton,deleteButton,backButton,logoutButton,refreshButton;
 
-	@FXML private TableView<Tables> dataTable;
-	@FXML private TableColumn<Tables, String> firstNameCol,lastNameCol,numberCol;
+	@FXML public TableView<Tables> dataTable;
+	@FXML public TableColumn<Tables, String> firstNameCol,lastNameCol,numberCol;
 	@FXML private TextField nameField,newNameField, priceField,quantityField;
 	@FXML private Label editLabel;
 

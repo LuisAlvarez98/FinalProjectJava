@@ -93,7 +93,7 @@ public class Main extends Application {
 	{
 		String pass = "password";
 		try {
-			System.out.println(hashPassword(pass));
+		System.out.println(hashPassword("1"));
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

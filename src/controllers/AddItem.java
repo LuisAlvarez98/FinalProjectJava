@@ -5,12 +5,13 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.mysql.jdbc.PreparedStatement;
-
+import controllers.InventoryController;
 import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -23,6 +24,7 @@ public class AddItem implements Initializable {
 
 	@FXML private Button submitButton,cancelButton;
 	@FXML private TextField nameField,priceField,quantityField;
+	@FXML private Label warningLabel;
 	/**
 	 * @param name
 	 * @param price
@@ -45,20 +47,63 @@ public class AddItem implements Initializable {
 		}
 	}
 
+	public static void removeItems(String name){
+		try{
+			PreparedStatement statement = (PreparedStatement) Main.con.prepareStatement("DELETE FROM inventory WHERE name =?");
+
+			statement.setString(1,name);
+
+
+			statement.executeUpdate();
+			statement.close();
+
+
+
+			System.out.println("works");
+		}catch(Exception e){
+			System.out.print("Error" + e);
+		}
+	}
+
 	/**
 	 * @param e
 	 */
 	@FXML
 	public void submitButtonPressed(ActionEvent e)
 	{
-		try{
+
+		try
+		{
 			Stage stage = (Stage) submitButton.getScene().getWindow();
 
-			addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
+			boolean flag = false;
+				for(int i = 0 ; i < Main.inventory.size();i++){
+					if(Main.inventory.get(i).equals(nameField.getText())){
+
+						removeItems(nameField.getText());
+						addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
+						stage.close();
+						flag = true;
+					}
 
 
 
-			stage.close();
+		}
+			if(!flag){
+				addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
+				stage.close();
+
+			}
+
+		
+
+
+
+
+
+
+
+
 		}catch(Exception ep){
 
 		}
