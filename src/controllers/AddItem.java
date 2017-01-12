@@ -78,24 +78,23 @@ public class AddItem implements Initializable {
 
 			boolean flag = false;
 				for(int i = 0 ; i < Main.inventory.size();i++){
+					warningLabel.setText("Please input another name");
 					if(Main.inventory.get(i).equals(nameField.getText())){
 
-						removeItems(nameField.getText());
-						addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
-						stage.close();
+
+						addItems(nameField.getText(),Integer.parseInt(Main.inventory.get(i+=2)),Integer.parseInt(Main.inventory.get(i+=3)));
+						//removeItems(nameField.getText());
+
 						flag = true;
 					}
-
-
-
 		}
 			if(!flag){
 				addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
+				warningLabel.setText("");
 				stage.close();
-
 			}
 
-		
+
 
 
 
