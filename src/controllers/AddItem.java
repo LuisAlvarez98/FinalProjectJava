@@ -71,38 +71,26 @@ public class AddItem implements Initializable {
 	@FXML
 	public void submitButtonPressed(ActionEvent e)
 	{
-
 		try
 		{
 			Stage stage = (Stage) submitButton.getScene().getWindow();
 
 			boolean flag = false;
-				for(int i = 0 ; i < Main.inventory.size();i++){
+				for(int i = 0 ; i < Main.inventory.size();i++)
+				{
 					warningLabel.setText("Please input another name");
-					if(Main.inventory.get(i).equals(nameField.getText())){
-
-
+					if(Main.inventory.get(i).equals(nameField.getText()))
+					{
 						addItems(nameField.getText(),Integer.parseInt(Main.inventory.get(i+=2)),Integer.parseInt(Main.inventory.get(i+=3)));
-						//removeItems(nameField.getText());
-
 						flag = true;
 					}
-		}
-			if(!flag){
+				}
+			if(!flag)
+			{
 				addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
 				warningLabel.setText("");
 				stage.close();
 			}
-
-
-
-
-
-
-
-
-
-
 		}catch(Exception ep){
 
 		}

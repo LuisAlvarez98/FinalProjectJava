@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -20,6 +21,7 @@ public class AddController implements Initializable {
 	@FXML private Button submitButton,cancelButton;
 
 	@FXML private TextField nameField,emailField,phoneField;
+	@FXML private Label warningLabel;
 
 	public static void addClients(String name, String email, String phone)
 	{
@@ -47,9 +49,22 @@ public class AddController implements Initializable {
 
 			Stage stage = (Stage) cancelButton.getScene().getWindow();
 
+			boolean flag = false;
+			for(int i = 0 ; i < Main.clients.size();i++)
+			{
+				warningLabel.setText("Please input another name");
+				if(Main.clients.get(i).equals(nameField.getText()))
+				{
+					addClients(nameField.getText(),Main.clients.get(i+=2),Main.clients.get(i+=3));
+					flag = true;
+				}
+			}
+		if(!flag)
+		{
 			addClients(nameField.getText(),emailField.getText(),phoneField.getText());
-
+			warningLabel.setText("");
 			stage.close();
+		}
 		}catch(Exception ep){
 
 		}
