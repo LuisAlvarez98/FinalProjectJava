@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * @author Luis Avarez
+ * @author Luis Alvarez
  *
  */
 public class AddItem implements Initializable {
@@ -41,30 +41,11 @@ public class AddItem implements Initializable {
 			statement.close();
 
 
-			System.out.println("works");
+
 		}catch(Exception e){
 			System.out.print("Error" + e);
 		}
 	}
-
-	public static void removeItems(String name){
-		try{
-			PreparedStatement statement = (PreparedStatement) Main.con.prepareStatement("DELETE FROM inventory WHERE name =?");
-
-			statement.setString(1,name);
-
-
-			statement.executeUpdate();
-			statement.close();
-
-
-
-			System.out.println("works");
-		}catch(Exception e){
-			System.out.print("Error" + e);
-		}
-	}
-
 	/**
 	 * @param e
 	 */
@@ -110,7 +91,7 @@ public class AddItem implements Initializable {
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+
 
 
 

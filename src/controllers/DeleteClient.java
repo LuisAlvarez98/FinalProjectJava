@@ -44,7 +44,7 @@ public class DeleteClient implements Initializable {
 
 			Main.con.close();
 
-			System.out.println("works");
+
 		}catch(Exception e){
 			System.out.print("Error" + e);
 		}

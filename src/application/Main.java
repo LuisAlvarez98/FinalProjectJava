@@ -20,12 +20,8 @@ import javafx.scene.layout.BorderPane;
 public class Main extends Application {
 	public static Parent root;
 	public static Parent second;
-	//public static Parent third;
 	public static Parent fourth;
 	public static Parent fifth;
-	//public static Parent six;
-	//public static Parent seven;
-	//public static Parent eight;
 	public static Parent nine;
 	public static Parent ten;
 	public static Parent eleven;
@@ -39,12 +35,8 @@ public class Main extends Application {
 
 	public static Scene scene1;
 	public static Scene scene2;
-	//public static Scene scene3;
 	public static Scene scene4;
 	public static Scene scene5;
-	//public static Scene scene6;
-	//public static Scene scene7;
-	//public static Scene scene8;
 	public static Scene scene9;
 	public static Scene scene10;
 	public static Scene scene11;
@@ -58,23 +50,14 @@ public class Main extends Application {
 		try {
 			root = FXMLLoader.load(getClass().getResource("/application/LoginGUI.fxml"));
 			second = FXMLLoader.load(getClass().getResource("/application/MainMenuGUI.fxml"));
-		//	third = FXMLLoader.load(getClass().getResource("/application/InventoryGUI.fxml"));
 			fourth = FXMLLoader.load(getClass().getResource("/application/AddGUI.fxml"));
-
-			//six = FXMLLoader.load(getClass().getResource("/application/SalesGUI.fxml"));
-		//	seven = FXMLLoader.load(getClass().getResource("/application/ClientsGUI.fxml"));
-		//	eight = FXMLLoader.load(getClass().getResource("/application/SaleDressGUI.fxml"));
 			nine = FXMLLoader.load(getClass().getResource("/application/DeleteClient.fxml"));
 			ten = FXMLLoader.load(getClass().getResource("/application/AddItem.fxml"));
 			eleven = FXMLLoader.load(getClass().getResource("/application/DeleteItem.fxml"));
+
 			scene1 = new Scene(root);
 			scene2 = new Scene(second);
-			//scene3 = new Scene(third);
 			scene4 = new Scene(fourth);
-
-			//scene6 = new Scene(six);
-			//scene7 = new Scene(seven);
-			//scene8 = new Scene(eight);
 			scene9 = new Scene(nine);
 			scene10 = new Scene(ten);
 			scene11 = new Scene(eleven);
@@ -95,7 +78,6 @@ public class Main extends Application {
 		try {
 		System.out.println(hashPassword("1"));
 		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		launch(args);

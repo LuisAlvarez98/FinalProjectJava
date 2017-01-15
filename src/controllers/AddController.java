@@ -15,14 +15,22 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * @author Luis Alvarez
+ *
+ */
 public class AddController implements Initializable {
 
 
 	@FXML private Button submitButton,cancelButton;
-
 	@FXML private TextField nameField,emailField,phoneField;
 	@FXML private Label warningLabel;
 
+	/**
+	 * @param name
+	 * @param email
+	 * @param phone
+	 */
 	public static void addClients(String name, String email, String phone)
 	{
 		try{
@@ -36,12 +44,14 @@ public class AddController implements Initializable {
 
 			Main.con.close();
 
-			System.out.println("works");
 		}catch(Exception e){
 			System.out.print("Error" + e);
 		}
 	}
 
+	/**
+	 * @param e
+	 */
 	@FXML
 	public void submitButtonPressed(ActionEvent e)
 	{
@@ -70,6 +80,9 @@ public class AddController implements Initializable {
 		}
 
 	}
+	/**
+	 * @param e
+	 */
 	public void cancelButtonPressed(ActionEvent e)
 	{
 		try{
@@ -83,7 +96,7 @@ public class AddController implements Initializable {
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+
 
 	}
 
