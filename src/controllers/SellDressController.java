@@ -71,7 +71,6 @@ public class SellDressController implements Initializable {
 			DbConnect connect = new DbConnect();
 			Main.inventory= connect.getDataInventory();
 			boolean found = false;
-
 			for(int i = 0; i < Main.inventory.size();i+=3)
 			{
 				if(dressSelector.getValue().equals(Main.inventory.get(i))){
