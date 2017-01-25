@@ -73,6 +73,8 @@ public class SellDressController implements Initializable {
 			boolean found = false;
 			for(int i = 0; i < Main.inventory.size();i+=3)
 			{
+
+
 				if(dressSelector.getValue().equals(Main.inventory.get(i))){
 					total.setText(Main.inventory.get(i+1));
 					found = true;
