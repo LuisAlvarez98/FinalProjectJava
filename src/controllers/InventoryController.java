@@ -163,25 +163,28 @@ public class InventoryController implements Initializable {
 			String value1 = newNameField.getText();
 			String value2 = priceField.getText();
 			String value3 = quantityField.getText();
-			if(value0.equals("")){
-				editLabel.setText("Please input the name you desire to edit.");
-			}else if(value1.equals("")){
-				editLabel.setText("Please input a new name.");
-			}else if(value2.equals("")){
-				editLabel.setText("Please input a new price.");
-			}else if(value3.equals("")){
-				editLabel.setText("Please input a new quantity.");
-			}else{
-				String sql="update inventory set name='"+value1+"',price='"+value2+"',quantity='"+value3+"'where  name='"+value0+"' ";
-				java.sql.PreparedStatement st = Main.con.prepareStatement(sql);
-				st.execute();
-				editLabel.setText(" ");
-				nameField.setText("");
-				newNameField.setText("");
-				priceField.setText("");
-				quantityField.setText("");
-			}
+			for(int i = 0; i < Main.inventory.size();i+=3){
+				if(!value0.equals(Main.inventory.get(i))){
+					editLabel.setText("Please input a valid name.");
+				}else if(value1.equals("")){
+					editLabel.setText("Please input a new name.");
+				}else if(value2.equals("")){
+					editLabel.setText("Please input a new price.");
+				}else if(value3.equals("")){
+					editLabel.setText("Please input a new quantity.");
+				}else{
+					String sql="update inventory set name='"+value1+"',price='"+value2+"',quantity='"+value3+"'where  name='"+value0+"' ";
+					java.sql.PreparedStatement st = Main.con.prepareStatement(sql);
+					st.execute();
+					editLabel.setText(" ");
+					nameField.setText("");
+					newNameField.setText("");
+					priceField.setText("");
+					quantityField.setText("");
+				}
 
+			}
+			
 			System.out.println("working");
 		}catch(Exception ep){
 
