@@ -16,8 +16,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
+ * AddController Class, In charge of adding 
+ * clients to the database => Tables
+ * 
  * @author Luis Alvarez
- *
+ * @since 09/10/2016
+ * @version 1.0
  */
 public class AddController implements Initializable {
 
@@ -27,6 +31,10 @@ public class AddController implements Initializable {
 	@FXML private Label warningLabel;
 
 	/**
+	 * addClients Query
+	 * In charge of creating a connection and adding elements to the clients table
+	 * 
+	 * 
 	 * @param name
 	 * @param email
 	 * @param phone
@@ -50,6 +58,9 @@ public class AddController implements Initializable {
 	}
 
 	/**
+	 * submitButtonPressed Method
+	 * When you hit the submit button, you add the desired client element to the table
+	 * 
 	 * @param e
 	 */
 	@FXML
@@ -81,6 +92,8 @@ public class AddController implements Initializable {
 
 	}
 	/**
+	 * cancelButtonPressed Method
+	 * in charge of closing the stage.
 	 * @param e
 	 */
 	public void cancelButtonPressed(ActionEvent e)
