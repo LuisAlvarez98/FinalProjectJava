@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 /**
  * LoginController Class
- * In charge of validating User and Password
+ * In charge of validating Username and Password
  *
  * @author Luis Alvarez
  * @since 09/10/2016
@@ -39,7 +39,8 @@ public class LoginController implements Initializable {
 		// TODO Auto-generated method stub
 		accessDenied.setText("");
 	}
-	/**onEnter Method
+	/**
+	 * onEnter Method
 	 * Validates User and password if true, it takes you to the main menu
 	 * @param ae
 	 */

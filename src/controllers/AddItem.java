@@ -30,9 +30,9 @@ public class AddItem implements Initializable {
 	@FXML private TextField nameField,priceField,quantityField;
 	@FXML private Label warningLabel;
 	/**
-	 * addItems Query
+	 * addItems Method
 	 * 
-	 * In charge of creating a connection and adding elements to the inventory table
+	 * A query in charge of creating a connection and adding elements to the inventory table
 	 * @param name
 	 * @param price
 	 * @param quantity

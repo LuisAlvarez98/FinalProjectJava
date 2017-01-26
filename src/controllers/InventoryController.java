@@ -152,7 +152,7 @@ public class InventoryController implements Initializable {
 	/**
 	 * editButtonPressed Method
 	 *
-	 * A pop out appears, so you can edit elements
+	 * In charge of editing the values of the inventory table
 	 * @param e
 	 */
 	@FXML

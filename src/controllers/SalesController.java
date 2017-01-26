@@ -50,7 +50,7 @@ public class SalesController implements Initializable {
 	}
 	/**
 	 * logoutButtonPressed Method
-	 * Takes you back to the log in screen
+	 * Takes you back to the login screen
 	 * @param e
 	 */
 	@FXML

@@ -51,7 +51,7 @@ public class MainController implements Initializable {
 				 Main.mainStage.setResizable(false);
 	}
 	/**
-	 * inventoryButtonPressed
+	 * inventoryButtonPressed Method
 	 * Takes the user to the inventory scene
 	 * @param e
 	 * @throws IOException
@@ -67,7 +67,7 @@ public class MainController implements Initializable {
 				 Main.mainStage.setResizable(false);
 	}
 	/**
-	 * salesButtonPressed
+	 * salesButtonPressed Method
 	 * Takes the user to the sales scene
 	 *
 	 * @param e
@@ -84,7 +84,7 @@ public class MainController implements Initializable {
 				 Main.mainStage.setResizable(false);
 	}
 	/**
-	 * clientsButtonPressed
+	 * clientsButtonPressed Method
 	 * Takes the user to the clients scene
 	 *
 	 * @param e
@@ -101,8 +101,8 @@ public class MainController implements Initializable {
 				 Main.mainStage.setResizable(false);
 	}
 	/**
-	 * sellDressButtonPressed
-	 * Takes the user to the Sell Dress scene
+	 * sellDressButtonPressed Method
+	 * Takes the user to the SaleDress scene
 	 *
 	 * @param e
 	 * @throws IOException

@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 /**
  * DeleteItem Class
- * Deletes an item from the inventory data
+ * Deletes an item from the inventory data table
  *
  * @author Luis Alvarez
  * @since 09/10/2016
@@ -72,7 +72,7 @@ public class DeleteItem implements Initializable {
 	}
 	/**
 	 * cancelButtonPressed Method
-	 * Closes the window
+	 * Closes the current stage
 	 * @param e
 	 */
 	@FXML

@@ -28,7 +28,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
- * ClientsController
+ * ClientsController Class
  * In charge of showing the Clients information in a table,
  * you can add, edit and delete elements.
  *
@@ -183,7 +183,7 @@ public class ClientsController implements Initializable {
 	}
 	/**
 	 * editButtonPressed Method
-	 * In charge of editing the values of the clients
+	 * In charge of editing the values of the clients table
 	 * @param e
 	 * @throws IOException
 	 */

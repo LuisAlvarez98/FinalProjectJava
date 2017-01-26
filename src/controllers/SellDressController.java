@@ -20,7 +20,8 @@ import javafx.scene.control.TextField;
 
 /**
  * SellDressController Class
- * Shop system
+ * In charge of selling dresses, you select a dress and a client. When you hit pay it automatically
+ * updates the sales table.
  *
  * @author Luis Alvarez
  * @since 09/10/2016
@@ -39,7 +40,7 @@ public class SellDressController implements Initializable {
 	boolean flag = true;
 
 	/**
-	 * backButtonPressed
+	 * backButtonPressed Method
 	 * Takes you back to the main menu
 	 * @param e
 	 */
@@ -49,8 +50,8 @@ public class SellDressController implements Initializable {
 		application.Main.mainStage.setScene(application.Main.scene2);
 	}
 	/**
-	 * logoutButtonPressed
-	 * Takes you back to the log in screen
+	 * logoutButtonPressed Method
+	 * Takes you back to the login screen
 	 * @param e
 	 */
 	@FXML
@@ -114,6 +115,12 @@ public class SellDressController implements Initializable {
 			System.out.print("Error" + e);
 		}
 	}
+	/**
+	 * updateInventory Method
+	 * In charge of updating the quantity of the item
+	 * @param quantity
+	 * @param dressName
+	 */
 	public static void updateInventory(int quantity, String dressName){
 		try{
 
@@ -125,6 +132,11 @@ public class SellDressController implements Initializable {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * deleteDress Method
+	 * In charge of deleting rows from inventory table if quantity <=0, depending on the dressName.
+	 * @param dressName
+	 */
 	public static void deleteDress(String dressName){
 		try{
 			String sql="DELETE FROM inventory WHERE name ='"+dressName+"'";

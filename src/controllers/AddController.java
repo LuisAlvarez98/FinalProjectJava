@@ -31,8 +31,8 @@ public class AddController implements Initializable {
 	@FXML private Label warningLabel;
 
 	/**
-	 * addClients Query
-	 * In charge of creating a connection and adding elements to the clients table
+	 * addClients Method
+	 * A query in charge of creating a connection and adding elements to the clients table
 	 * 
 	 * 
 	 * @param name

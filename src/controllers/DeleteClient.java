@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 /**
  * DeleteClient Class
- * Deletes an item from the clients data
+ * Deletes an item from the clients data table
  *
  * @author Luis Alvarez
  * @since 09/10/2016
@@ -72,7 +72,7 @@ public class DeleteClient implements Initializable {
 	}
 	/**
 	 * cancelButtonPressed Method
-	 * Closes the window
+	 * Closes the current stage
 	 * @param e
 	 */
 	@FXML
