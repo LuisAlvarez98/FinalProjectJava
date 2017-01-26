@@ -195,10 +195,11 @@ public class ClientsController implements Initializable {
 			String value1 = newNameField.getText();
 			String value2 = emailField.getText();
 			String value3 = phoneField.getText();
-			if(value0.equals("")){
-				editLabel.setText("Please input the name you desire to edit.");
-			}else if(value1.equals("")){
-				editLabel.setText("Please input a new name.");
+			for(int i = 0; i < Main.clients.size();i+=3){
+				if(!value0.equals(Main.clients.get(i))){
+					editLabel.setText("Please input a valid name.");
+				}else if(value1.equals("")){
+					editLabel.setText("Please input a new name.");
 			}else if(value2.equals("")){
 				editLabel.setText("Please input a new email.");
 			}else if(value3.equals("")){
@@ -213,6 +214,8 @@ public class ClientsController implements Initializable {
 				emailField.setText("");
 				phoneField.setText("");
 			}
+		}
+		
 		}catch(Exception ep){
 
 		}
