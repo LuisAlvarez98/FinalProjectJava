@@ -141,7 +141,7 @@ public class ClientsController implements Initializable {
 	}
 	/**
 	 * addButtonPressed Method
-	 * In charge of opening the pop up of addController
+	 * In charge of opening the pop up of AddController
 	 * @param e
 	 * @throws IOException
 	 */
@@ -183,7 +183,7 @@ public class ClientsController implements Initializable {
 	}
 	/**
 	 * editButtonPressed Method
-	 * In charge of opening the pop up of EditController
+	 * In charge of editing the values of the clients
 	 * @param e
 	 * @throws IOException
 	 */
@@ -213,8 +213,6 @@ public class ClientsController implements Initializable {
 				emailField.setText("");
 				phoneField.setText("");
 			}
-
-			System.out.println("working");
 		}catch(Exception ep){
 
 		}
