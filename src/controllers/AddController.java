@@ -59,8 +59,8 @@ public class AddController implements Initializable {
 
 	/**
 	 * submitButtonPressed Method
-	 * When you hit the submit button, you add the desired client element to the table
-	 * 
+	 * When you hit the submit button, you add the desired client element to the table,
+	 * checks if client already exists.
 	 * @param e
 	 */
 	@FXML
@@ -93,7 +93,7 @@ public class AddController implements Initializable {
 	}
 	/**
 	 * cancelButtonPressed Method
-	 * in charge of closing the stage.
+	 * In charge of closing the current stage.
 	 * @param e
 	 */
 	public void cancelButtonPressed(ActionEvent e)

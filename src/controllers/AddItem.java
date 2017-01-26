@@ -16,8 +16,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
+ * AddItem Class, In charge of adding 
+ * items to the database => Tables
+ * 
  * @author Luis Alvarez
- *
+ * @since 09/10/2016
+ * @version 1.0
  */
 public class AddItem implements Initializable {
 
@@ -26,6 +30,9 @@ public class AddItem implements Initializable {
 	@FXML private TextField nameField,priceField,quantityField;
 	@FXML private Label warningLabel;
 	/**
+	 * addItems Query
+	 * 
+	 * In charge of creating a connection and adding elements to the inventory table
 	 * @param name
 	 * @param price
 	 * @param quantity
@@ -33,20 +40,19 @@ public class AddItem implements Initializable {
 	public static void addItems(String name, int price, int quantity){
 		try{
 			PreparedStatement statement = (PreparedStatement) Main.con.prepareStatement("INSERT INTO inventory(name,price,quantity) VALUES(?,?,?)");
-
 			statement.setString(1, name);
 			statement.setInt(2,price);
 			statement.setInt(3,quantity);
 			statement.executeUpdate();
 			statement.close();
-
-
-
 		}catch(Exception e){
 			System.out.print("Error" + e);
 		}
 	}
 	/**
+	 * submitButtonPressed Method
+	 * When you hit the submit button, you add the desired item element to the table,
+	 * checks if item already exists.
 	 * @param e
 	 */
 	@FXML
@@ -78,6 +84,8 @@ public class AddItem implements Initializable {
 
 	}
 	/**
+	 * cancelButtonPressed Method
+	 * In charge of closing the current stage.
 	 * @param e
 	 */
 	public void cancelButtonPressed(ActionEvent e)
