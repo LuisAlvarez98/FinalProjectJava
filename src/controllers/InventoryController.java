@@ -149,7 +149,7 @@ public class InventoryController implements Initializable {
 		}
 
 	}
-<<<<<<< HEAD
+
 	public static boolean integerChecker(String s){
 		try{
 			Long.parseLong(s);
@@ -158,8 +158,7 @@ public class InventoryController implements Initializable {
 			return false;
 		}
 	}
-=======
->>>>>>> 2ffc0bc3625ccaf9526849742f546de3e0f73bc0
+
 	/**
 	 * editButtonPressed Method
 	 *
@@ -175,7 +174,7 @@ public class InventoryController implements Initializable {
 			String value2 = priceField.getText();
 			String value3 = quantityField.getText();
 			for(int i = 0; i < Main.inventory.size();i+=3){
-<<<<<<< HEAD
+
 				if(!Main.inventory.get(i).equals(value0)){
 					editLabel.setText("Please input a valid name.");
 					}else if(value1.equals("")){
@@ -183,15 +182,6 @@ public class InventoryController implements Initializable {
 				}else if(integerChecker(value2) == false){
 					editLabel.setText("Please input a new price.");
 				}else if(integerChecker(value3) == false){
-=======
-				if(!value0.equals(Main.inventory.get(i))){
-					editLabel.setText("Please input a valid name.");
-				}else if(value1.equals("")){
-					editLabel.setText("Please input a new name.");
-				}else if(value2.equals("")){
-					editLabel.setText("Please input a new price.");
-				}else if(value3.equals("")){
->>>>>>> 2ffc0bc3625ccaf9526849742f546de3e0f73bc0
 					editLabel.setText("Please input a new quantity.");
 				}else{
 					String sql="update inventory set name='"+value1+"',price='"+value2+"',quantity='"+value3+"'where  name='"+value0+"' ";
