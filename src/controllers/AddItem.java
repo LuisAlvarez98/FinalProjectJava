@@ -50,6 +50,23 @@ public class AddItem implements Initializable {
 		}
 	}
 	/**
+	 * integerChecker Method
+	 * 
+	 * Checks if the string is an integer or a string
+	 * if it is an integer it will return true,
+	 * if it is an string it will return false.
+	 * @param s
+	 * @return boolean
+	 */
+	public static boolean integerChecker(String s){
+		try{
+			Long.parseLong(s);
+			return true;
+		}catch(NumberFormatException nfe){
+			return false;
+		}
+	}
+	/**
 	 * submitButtonPressed Method
 	 * When you hit the submit button, you add the desired item element to the table,
 	 * checks if item already exists.
@@ -65,9 +82,16 @@ public class AddItem implements Initializable {
 			boolean flag = false;
 				for(int i = 0 ; i < Main.inventory.size();i++)
 				{
-					warningLabel.setText("Please input another name");
+					if(nameField.getText().equals("")){
+						warningLabel.setText("Please input a name");
+					}else if(integerChecker(priceField.getText()) == false){
+						warningLabel.setText("Please input a price");
+					}else if(integerChecker(quantityField.getText()) == false){
+						warningLabel.setText("Please input a quantity");
+					}
 					if(Main.inventory.get(i).equals(nameField.getText()))
-					{
+					{	
+						warningLabel.setText("Please input another name");
 						addItems(nameField.getText(),Integer.parseInt(Main.inventory.get(i+=2)),Integer.parseInt(Main.inventory.get(i+=3)));
 						flag = true;
 					}

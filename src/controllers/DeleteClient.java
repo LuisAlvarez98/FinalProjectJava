@@ -26,7 +26,6 @@ public class DeleteClient implements Initializable {
 
 	@FXML public Button submitButton,cancelButton;
 	@FXML public TextField nameField;
-
 	/**
 	 * removeClients Method
 	 * A query that is in charge of deleting rows from the clients data

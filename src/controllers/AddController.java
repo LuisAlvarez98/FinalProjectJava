@@ -56,7 +56,23 @@ public class AddController implements Initializable {
 			System.out.print("Error" + e);
 		}
 	}
-
+	/**
+	 * integerChecker Method
+	 * 
+	 * Checks if the string is an integer or a string
+	 * if it is an integer it will return true,
+	 * if it is an string it will return false.
+	 * @param s
+	 * @return boolean
+	 */
+	public static boolean integerChecker(String s){
+		try{
+			Long.parseLong(s);
+			return true;
+		}catch(NumberFormatException nfe){
+			return false;
+		}
+	}
 	/**
 	 * submitButtonPressed Method
 	 * When you hit the submit button, you add the desired client element to the table,
@@ -73,9 +89,12 @@ public class AddController implements Initializable {
 			boolean flag = false;
 			for(int i = 0 ; i < Main.clients.size();i++)
 			{
-				warningLabel.setText("Please input another name");
+				if(nameField.getText().equals("")){
+					warningLabel.setText("Please input a name");
+				}
 				if(Main.clients.get(i).equals(nameField.getText()))
 				{
+					warningLabel.setText("Please input another name");
 					addClients(nameField.getText(),Main.clients.get(i+=2),Main.clients.get(i+=3));
 					flag = true;
 				}
