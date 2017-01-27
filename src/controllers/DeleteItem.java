@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -26,6 +27,7 @@ public class DeleteItem implements Initializable {
 
 	@FXML public Button submitButton,cancelButton;
 	@FXML public TextField nameField;
+	@FXML public Label warningLabel;
 
 	/**
 	 * removeItems Method
@@ -42,7 +44,7 @@ public class DeleteItem implements Initializable {
 			statement.executeUpdate();
 			statement.close();
 
-			Main.con.close();
+		//	Main.con.close();
 
 
 		}catch(Exception e){
@@ -62,9 +64,19 @@ public class DeleteItem implements Initializable {
 	@FXML
 	public void submitButtonPressed(ActionEvent e){
 		try{
-			Stage stage = (Stage) cancelButton.getScene().getWindow();
-			removeItems(nameField.getText());
-			stage.close();
+			
+			for(int i = 0; i < Main.inventory.size();i+=3){
+				if(!Main.inventory.get(i).equals(nameField.getText())){
+					warningLabel.setText("Please input a valid name");
+				
+				}else{
+					Stage stage = (Stage) cancelButton.getScene().getWindow();
+					removeItems(nameField.getText());
+					stage.close();
+					
+				}
+			}
+		
 		}catch(Exception ep){
 
 		}
