@@ -68,7 +68,6 @@ public class DeleteItem implements Initializable {
 			for(int i = 0; i < Main.inventory.size();i+=3){
 				if(!Main.inventory.get(i).equals(nameField.getText())){
 					warningLabel.setText("Please input a valid name");
-				
 				}else{
 					Stage stage = (Stage) cancelButton.getScene().getWindow();
 					removeItems(nameField.getText());

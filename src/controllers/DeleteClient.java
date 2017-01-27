@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -26,6 +27,7 @@ public class DeleteClient implements Initializable {
 
 	@FXML public Button submitButton,cancelButton;
 	@FXML public TextField nameField;
+	@FXML public Label warningLabel;
 	/**
 	 * removeClients Method
 	 * A query that is in charge of deleting rows from the clients data
@@ -61,9 +63,17 @@ public class DeleteClient implements Initializable {
 	@FXML
 	public void submitButtonPressed(ActionEvent e){
 		try{
-			Stage stage = (Stage) cancelButton.getScene().getWindow();
-			removeClients(nameField.getText());
-			stage.close();
+			
+			for(int i = 0; i < Main.clients.size();i+=3){
+				if(!Main.clients.get(i).equals(nameField.getText())){
+					warningLabel.setText("Please input a valid name");
+				}else{
+					Stage stage = (Stage) cancelButton.getScene().getWindow();
+					removeClients(nameField.getText());
+					stage.close();
+				}
+			}
+		
 		}catch(Exception ep){
 
 		}
