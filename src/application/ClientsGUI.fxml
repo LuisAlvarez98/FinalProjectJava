@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="495.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientsController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#23292f" height="71.0" stroke="BLACK" strokeType="INSIDE" width="756.0" />
+      <Button fx:id="logoutButton" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#logoutButtonPressed" stylesheets="@application.css" text="Logout" />
+      <Button fx:id="backButton" layoutX="137.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="53.0" prefWidth="84.0" stylesheets="@application.css" text="Back" />
+      <TableView fx:id="dataTable" layoutX="20.0" layoutY="99.0" prefHeight="302.0" prefWidth="520.0">
+        <columns>
+          <TableColumn fx:id="firstNameCol" prefWidth="153.0" text="name" />
+            <TableColumn fx:id="lastNameCol" prefWidth="198.0" text="email" />
+            <TableColumn fx:id="numberCol" prefWidth="188.0" text="phone" />
+        </columns>
+      </TableView>
+      <Label layoutX="417.0" layoutY="20.0" prefHeight="17.0" prefWidth="147.0" text="Clients" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="refreshButton21" layoutX="576.0" layoutY="348.0" mnemonicParsing="false" onAction="#editButtonPressed" prefHeight="25.0" prefWidth="94.0" stylesheets="@application.css" text="Edit" />
+      <TextField fx:id="nameField" layoutX="576.0" layoutY="144.0" />
+      <TextField fx:id="emailField" layoutX="576.0" layoutY="258.0" />
+      <TextField fx:id="phoneField" layoutX="576.0" layoutY="307.0" />
+      <Label layoutX="576.0" layoutY="120.0" text="Name" />
+      <Label layoutX="578.0" layoutY="235.0" text="Email" />
+      <Label layoutX="575.0" layoutY="283.0" text="Phone" />
+      <TextField fx:id="newNameField" layoutX="576.0" layoutY="210.0" />
+      <Label layoutX="577.0" layoutY="186.0" text="New Name" />
+      <Label fx:id="editLabel" layoutX="522.0" layoutY="401.0" prefHeight="60.0" prefWidth="219.0" />
+      <Button fx:id="deleteButton" layoutX="417.0" layoutY="419.0" mnemonicParsing="false" onAction="#deleteButtonPressed" stylesheets="@application.css" text="Delete" />
+      <Button fx:id="addButton" layoutX="139.0" layoutY="419.0" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="53.0" prefWidth="81.0" stylesheets="@application.css" text="Add" />
+      <Button fx:id="refreshButton" layoutX="274.0" layoutY="419.0" mnemonicParsing="false" onAction="#refreshButtonPressed" stylesheets="@application.css" text="Refresh" />
+   </children>
+</AnchorPane>
