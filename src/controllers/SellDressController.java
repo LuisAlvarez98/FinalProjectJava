@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * SellDressController Class
@@ -36,7 +37,7 @@ public class SellDressController implements Initializable {
 	@FXML private ChoiceBox<String> dressSelector,clientSelector;
 
 	@FXML private Label total;
-
+	@FXML private Label warningLabel;
 	boolean flag = true;
 
 	/**
@@ -74,19 +75,30 @@ public class SellDressController implements Initializable {
 			boolean found = false;
 			for(int i = 0; i < Main.inventory.size();i+=3)
 			{
-
-
-				if(dressSelector.getValue().equals(Main.inventory.get(i))){
-					total.setText(Main.inventory.get(i+1));
-					found = true;
-					addSales(dressSelector.getValue(),Integer.parseInt(total.getText()),clientSelector.getValue());
-					updateInventory((Integer.parseInt(Main.inventory.get(i+2))-1),dressSelector.getValue());
-					if(Integer.parseInt(Main.inventory.get(i+2)) <= 1){
-						deleteDress(dressSelector.getValue());
+				boolean checkDress = dressSelector.getSelectionModel().isEmpty();
+				boolean checkClient = clientSelector.getSelectionModel().isEmpty();
+				if((checkDress == true) && (checkClient == true)){
+					warningLabel.setText("*Please select a client and a dress.*");
+				}else if(checkClient == true){
+					warningLabel.setText("*Please select a client.*");
+				}else if(checkDress == true){
+					warningLabel.setText("*Please select a dress.*");
+				}else{
+					warningLabel.setText("");
+					if(dressSelector.getValue().equals(Main.inventory.get(i))){
+						total.setText(Main.inventory.get(i+1));
+						found = true;
+						addSales(dressSelector.getValue(),Integer.parseInt(total.getText()),clientSelector.getValue());
+						updateInventory((Integer.parseInt(Main.inventory.get(i+2))-1),dressSelector.getValue());
+						if(Integer.parseInt(Main.inventory.get(i+2)) <= 1){
+							deleteDress(dressSelector.getValue());
+						}
 					}
+					if(!found)
+						total.setText("");
 				}
-				if(!found)
-					total.setText("");
+			
+				
 			}
 		}catch(Exception ep){
 
