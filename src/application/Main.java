@@ -72,7 +72,7 @@ public class Main extends Application {
 			scene10 = new Scene(ten);
 			scene11 = new Scene(eleven);
 			primaryStage.setResizable(false);
-
+			primaryStage.setTitle("LUGA v1");
 			scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene1);
 
