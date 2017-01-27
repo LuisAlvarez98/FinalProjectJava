@@ -4,6 +4,15 @@ import java.util.ArrayList;
 
 import javafx.beans.property.SimpleStringProperty;
 
+/**
+ * Tables Class
+ * 
+ * 
+ * @author Luis Alvarez
+ * @since 1/27/2017
+ * @version 1.0
+ *
+ */
 public class Tables {
 
 

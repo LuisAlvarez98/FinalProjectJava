@@ -75,8 +75,10 @@ public class SellDressController implements Initializable {
 			boolean found = false;
 			for(int i = 0; i < Main.inventory.size();i+=3)
 			{
+				//Checks if the selectors are empty.
 				boolean checkDress = dressSelector.getSelectionModel().isEmpty();
 				boolean checkClient = clientSelector.getSelectionModel().isEmpty();
+				
 				if((checkDress == true) && (checkClient == true)){
 					warningLabel.setText("*Please select a client and a dress.*");
 				}else if(checkClient == true){

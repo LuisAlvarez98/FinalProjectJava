@@ -17,6 +17,16 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 
+/**
+ * Main Class
+ * In charge of initialize the Parents and Scenes. Also, Main
+ * is in charge of loading some of the fxmls, and launching the application.
+ * 
+ * @author Luis Alvarez
+ * @since 1/27/2017
+ * @version 1.0
+ *
+ */
 public class Main extends Application {
 	public static Parent root;
 	public static Parent second;
@@ -72,6 +82,11 @@ public class Main extends Application {
 		}
 	}
 
+	/**
+	 * main Method
+	 *  In charge of launching the application
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		launch(args);
