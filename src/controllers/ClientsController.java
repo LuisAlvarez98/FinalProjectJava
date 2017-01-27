@@ -181,7 +181,15 @@ public class ClientsController implements Initializable {
 
 
 	}
-<<<<<<< HEAD
+	/**
+	 * integerChecker Method
+	 * 
+	 * Checks if the string is an integer or a string
+	 * if it is an integer it will return true,
+	 * if it is an string it will return false.
+	 * @param s
+	 * @return boolean
+	 */
 	public static boolean integerChecker(String s){
 		try{
 			Long.parseLong(s);
@@ -190,8 +198,6 @@ public class ClientsController implements Initializable {
 			return false;
 		}
 	}
-=======
->>>>>>> 2ffc0bc3625ccaf9526849742f546de3e0f73bc0
 	/**
 	 * editButtonPressed Method
 	 * In charge of editing the values of the clients table
@@ -207,22 +213,15 @@ public class ClientsController implements Initializable {
 			String value2 = emailField.getText();
 			String value3 = phoneField.getText();
 			for(int i = 0; i < Main.clients.size();i+=3){
-<<<<<<< HEAD
+
 				if(!Main.clients.get(i).equals(value0)){
 				editLabel.setText("Please input a valid name.");
-=======
-				if(!value0.equals(Main.clients.get(i))){
-					editLabel.setText("Please input a valid name.");
->>>>>>> 2ffc0bc3625ccaf9526849742f546de3e0f73bc0
+
 				}else if(value1.equals("")){
 					editLabel.setText("Please input a new name.");
 			}else if(value2.equals("")){
 				editLabel.setText("Please input a new email.");
-<<<<<<< HEAD
 			}else if(integerChecker(value3) == false){
-=======
-			}else if(value3.equals("")){
->>>>>>> 2ffc0bc3625ccaf9526849742f546de3e0f73bc0
 				editLabel.setText("Please input a new phone.");
 			}else{
 				String sql="update clients set name='"+value1+"',email='"+value2+"',phone='"+value3+"'where  name='"+value0+"' ";

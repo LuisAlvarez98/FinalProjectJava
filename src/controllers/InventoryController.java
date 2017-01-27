@@ -150,6 +150,15 @@ public class InventoryController implements Initializable {
 
 	}
 
+	/**
+	 * integerChecker Method
+	 * 
+	 * Checks if the string is an integer or a string
+	 * if it is an integer it will return true,
+	 * if it is an string it will return false.
+	 * @param s
+	 * @return boolean
+	 */
 	public static boolean integerChecker(String s){
 		try{
 			Long.parseLong(s);
