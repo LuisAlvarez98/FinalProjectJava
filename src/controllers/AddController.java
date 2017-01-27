@@ -50,7 +50,7 @@ public class AddController implements Initializable {
 			statement.executeUpdate();
 			statement.close();
 
-			Main.con.close();
+			//Main.con.close();
 
 		}catch(Exception e){
 			System.out.print("Error" + e);
@@ -86,25 +86,26 @@ public class AddController implements Initializable {
 
 			Stage stage = (Stage) cancelButton.getScene().getWindow();
 
-			boolean flag = false;
-			for(int i = 0 ; i < Main.clients.size();i++)
+			for(int i = 0 ; i < Main.clients.size();i+=3)
 			{
-				if(nameField.getText().equals("")){
+				if(nameField.getText().equals(Main.clients.get(i))){
+					warningLabel.setText("Please input a valid name");
+					return;
+				}else if(nameField.getText().equals("")){
 					warningLabel.setText("Please input a name");
-				}
-				if(Main.clients.get(i).equals(nameField.getText()))
-				{
-					warningLabel.setText("Please input another name");
-					addClients(nameField.getText(),Main.clients.get(i+=2),Main.clients.get(i+=3));
-					flag = true;
+					return;
+				}else if(emailField.getText().equals("")){
+					warningLabel.setText("Please input a email");
+					return;
+				}else if(integerChecker(phoneField.getText()) == false){
+					warningLabel.setText("Please input a phone");
+					return;
 				}
 			}
-		if(!flag)
-		{
 			addClients(nameField.getText(),emailField.getText(),phoneField.getText());
 			warningLabel.setText("");
-			stage.close();
-		}
+				stage.close();	
+
 		}catch(Exception ep){
 
 		}

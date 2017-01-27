@@ -78,34 +78,33 @@ public class AddItem implements Initializable {
 		try
 		{
 			Stage stage = (Stage) submitButton.getScene().getWindow();
-
-			boolean flag = false;
-				for(int i = 0 ; i < Main.inventory.size();i++)
+				for(int i = 0 ; i < Main.inventory.size();i+=3)
 				{
-					if(nameField.getText().equals("")){
+					if(nameField.getText().equals(Main.inventory.get(i))){
+						warningLabel.setText("Please input a valid name");
+						return;
+					}else if(nameField.getText().equals("")){
 						warningLabel.setText("Please input a name");
+						return;
 					}else if(integerChecker(priceField.getText()) == false){
 						warningLabel.setText("Please input a price");
+						return;
 					}else if(integerChecker(quantityField.getText()) == false){
 						warningLabel.setText("Please input a quantity");
+						return;
 					}
-					if(Main.inventory.get(i).equals(nameField.getText()))
-					{	
-						warningLabel.setText("Please input another name");
-						addItems(nameField.getText(),Integer.parseInt(Main.inventory.get(i+=2)),Integer.parseInt(Main.inventory.get(i+=3)));
-						flag = true;
-					}
+					
 				}
-			if(!flag)
-			{
+				
 				addItems(nameField.getText(),Integer.parseInt(priceField.getText()),Integer.parseInt(quantityField.getText()));
 				warningLabel.setText("");
-				stage.close();
-			}
+					stage.close();	
+					
 		}catch(Exception ep){
 
 		}
 
+		
 	}
 	/**
 	 * cancelButtonPressed Method
