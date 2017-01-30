@@ -36,7 +36,8 @@ public class DbConnect
 				Main.st = Main.con.createStatement();
 
 		}catch(Exception e){
-			System.out.print("Error" + e);
+			Main.offline = true;
+			System.out.print("offline 404 ");
 		}
 	}
 	/**

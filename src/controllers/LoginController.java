@@ -59,9 +59,14 @@ public class LoginController implements Initializable {
 	public void submitButtonPressed(ActionEvent event)
 	{
 		try{
+			if(Main.offline == false){
+				accessDenied.setText("Offline..");
+			}
+			
 			DbConnect connect = new DbConnect();
 			users = connect.getDataUser();
 			passwords = connect.getDataPass();
+			
 			if(showPassword.isSelected()){
 				passField.setText(showPassField.getText());
 			}else{
@@ -81,13 +86,13 @@ public class LoginController implements Initializable {
 
 				}else if(!userField.getText().equals(users.get(i))){
 					accessDenied.setText("Wrong Credentials");
-				}else{
+				}else if(!Main.offline){
 					accessDenied.setText("Wrong Credentials");
 				}
 			}
 
 		}catch(Exception ep){
-
+			System.out.println("La cagaste");
 		}
 
 	}

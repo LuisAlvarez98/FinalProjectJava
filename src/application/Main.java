@@ -53,7 +53,7 @@ public class Main extends Application {
 	public static Stage mainStage;
 	public static String user;
 
-
+	public static boolean offline;
 
 	@Override
 	public void start(Stage primaryStage) {
