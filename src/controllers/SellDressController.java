@@ -12,7 +12,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -38,6 +41,7 @@ public class SellDressController implements Initializable {
 
 	@FXML private Label total;
 	@FXML private Label warningLabel;
+	@FXML public Stage stage1 = new Stage();
 	boolean flag = true;
 
 	/**
@@ -93,7 +97,14 @@ public class SellDressController implements Initializable {
 						addSales(dressSelector.getValue(),Integer.parseInt(total.getText()),clientSelector.getValue());
 						updateInventory((Integer.parseInt(Main.inventory.get(i+2))-1),dressSelector.getValue());
 						if(Integer.parseInt(Main.inventory.get(i+2)) <= 1){
+							//TODO OutDress Pop
+							warningLabel.setText("You are out of:" + dressSelector.getValue());
 							deleteDress(dressSelector.getValue());
+							Parent root1 = FXMLLoader.load(getClass().getResource("/application/OutDress.fxml"));
+							Scene scene10 = new Scene(root1);
+							stage1.setScene(scene10);
+							stage1.setResizable(false);
+							stage1.show();
 						}
 					}
 					if(!found)
