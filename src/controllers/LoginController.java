@@ -92,7 +92,7 @@ public class LoginController implements Initializable {
 			}
 
 		}catch(Exception ep){
-			System.out.println("La cagaste");
+			
 		}
 
 	}
